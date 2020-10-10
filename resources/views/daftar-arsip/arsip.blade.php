@@ -36,7 +36,6 @@
                         <td>{{ $data->tahun}}</td>
                         <td>{{ $data->jenis_arsip}}</td>
                         <td>
-                            <a href="{{ route('arsip.s',$data->id)}}" class="badge badge-info">Detail</a>
                             <a href="{{ route('arsip.e',$data->id)}}" class="badge badge-primary">Edit</a>
                             <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
                             <form action="{{ route('arsip.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
