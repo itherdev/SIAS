@@ -16,40 +16,40 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Data Master Aplikasi</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="layout-default.html">Daftar Operator</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Daftar Kategori Pelayanan</a></li>
+              <li><a class="nav-link" href="{{ route('operator')}}">Daftar Operator</a></li>
+              <li><a class="nav-link" href="{{ route('kategori_pelayanan')}}">Daftar Kategori Pelayanan</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Stock Opname</span></a>
             <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{ route('arsip')}}">Daftar Arsip</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Stock Opname Berkas</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Stock Opname Buku</a></li>
+              <li><a class="nav-link" href="{{ route('opname_berkas')}}">Stock Opname Berkas</a></li>
+              <li><a class="nav-link" href="{{ route('opname_buku')}}">Stock Opname Buku</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Peminjaman Arsip</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="layout-transparent.html">Peminjaman Arsip Berkas</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Peminjaman Arsip Buku</a></li>
+              <li><a class="nav-link" href="{{ route('peminjaman_arsip_berkas')}}">Peminjaman Arsip Berkas</a></li>
+              <li><a class="nav-link" href="{{ route('peminjaman_arsip_buku')}}">Peminjaman Arsip Buku</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Pengembalian Arsip</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="layout-transparent.html">Pengembalian Arsip Berkas</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Pengembalian Arsip Buku</a></li>
+              <li><a class="nav-link" href="{{ route('pengembalian_arsip_berkas')}}">Pengembalian Arsip Berkas</a></li>
+              <li><a class="nav-link" href="{{ route('pengembalian_arsip_berkas')}}">Pengembalian Arsip Buku</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Laporan/Report</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="layout-default.html">Daftar Arsip</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Laporan Stock Opname Berkas</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Laporan Stock Opname Buku</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Laporan Pengembalian dan Peminjaman Arsip Berkas</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Laporan Pengembalian dan Peminjaman Arsip Buku</a></li>
+              <li><a class="nav-link" href="{{ route('daftar/arsip')}}">Daftar Arsip</a></li>
+              <li><a class="nav-link" href="{{ route('laporan/opname_berkas')}}">Laporan Stock Opname Berkas</a></li>
+              <li><a class="nav-link" href="{{ route('laporan/opname_buku')}}">Laporan Stock Opname Buku</a></li>
+              <li><a class="nav-link" href="{{ route('laporan/pengembalian_peminjaman_arsip')}}">Laporan Pengembalian dan Peminjaman Arsip Berkas</a></li>
+              <li><a class="nav-link" href="{{ route('laporan/pengembalian_peminjaman_buku')}}">Laporan Pengembalian dan Peminjaman Arsip Buku</a></li>
             </ul>
           </li>
           <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
