@@ -40,12 +40,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     /*------------------ Data Master Aplikasi--------------------------*/
     //Daftar Operator
-    Route::get('oprator', 'OpratorController@index')->name('oprator');
-    Route::get('oprator/tambah', 'OpratorController@tambah')->name('op.t');
-    Route::post('oprator', 'OpratorController@simpan')->name('op.s');
-    Route::delete('oprator/{id}', 'OpratorController@delete')->name('op.d');
-    Route::get('oprator/{id}/edit', 'OpratorController@edit')->name('op.e');
-    Route::patch('oprator/{id}', 'OpratorController@update')->name('op.u');
+    Route::get('operator', 'OperatorController@index')->name('operator');
+    Route::get('operator/tambah', 'OperatorController@create')->name('op.t');
+    Route::post('operator', 'OperatorController@store')->name('op.s');
+    Route::delete('operator/{id}', 'OperatorController@destroy')->name('op.d');
+    Route::get('operator/{id}/edit', 'OperatorController@edit')->name('op.e');
+    Route::patch('operator/{id}', 'OperatorController@update')->name('op.u');
 
     /*------------------ Stock Opname--------------------------*/
     //Daftar Arsip
@@ -55,7 +55,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('arsip/{id}', 'ArsipController@destroy')->name('arsip.d');
     Route::get('arsip/{id}/edit', 'ArsipController@edit')->name('arsip.e');
     Route::patch('arsip/{id}', 'ArsipController@update')->name('arsip.u');
-
 
     //Stockopname Berkas
     Route::get('op-berkas', 'OpBerkasController@index')->name('op-berkas');
