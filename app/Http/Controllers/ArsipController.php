@@ -69,7 +69,7 @@ class ArsipController extends Controller
     public function show($id)
     {
         $data_arsip = DB::table('data_arsip')->where('id', $id)->first();
-        return view('daftar-arsip.arsip-edit', ['data_arsip' => $data_arsip]);
+        return view('daftar-arsip.arsip-detail', ['data_arsip' => $data_arsip]);
     }
 
     /**

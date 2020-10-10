@@ -27,15 +27,16 @@
                     <th>Lavel</th>
                     <th>Action</th>
                 </tr>
-                    @foreach ($data_barang as $no => $data)
+                    @foreach ($operator as $no => $data)
                     <tr>
-                        <td>{{ $data_barang->firstItem()+$no}}</td>
-                        <td>{{ $data->kode_barang}}</td>
-                        <td>{{ $data->nama_barang}}</td>
+                        <td>{{ $operator->firstItem()+$no}}</td>
+                        <td>{{ $data->id_op}}</td>
+                        <td>{{ $data->nm_op}}</td>
+                        <td>{{ $data->level}}</td>
                         <td>
-                            <a href="{{ route('cr.e',$data->id)}}" class="badge badge-primary">Edit</a>
+                            <a href="{{ route('op.e',$data->id)}}" class="badge badge-primary">Edit</a>
                             <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                            <form action="{{ route('cr.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
+                            <form action="{{ route('op.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
                                 @csrf
                                 @method('delete')
                             </form>
@@ -44,7 +45,7 @@
                     </tr>
                     @endforeach
             </table>
-            {{$data_barang->links()}}
+            {{$operator->links()}}
         </div>
     </div>
 </div>

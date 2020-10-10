@@ -13,24 +13,24 @@
                   {{-- <div class="alert alert-info">
                     <b>Note!</b> Not all browsers support HTML5 type input.
                   </div> --}}
-                <form action="{{ route('cr.u', $data_barang->id)}}" method="POST">
+                <form action="{{ route('op.u', $operator->id)}}" method="POST">
                   @csrf
                   @method('patch')
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label @error('kode_barang')
+                        <label @error('id_op')
                             class="text-danger"
-                        @enderror>Kode Barang
-                          @error('kode_barang')
+                        @enderror>ID Operator
+                          @error('id_op')
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="kode_barang"
-                        @if (old('kode_barang'))
-                          value="{{ old('kode_barang')}}"
+                        <input type="text" name="id_op"
+                        @if (old('id_op'))
+                          value="{{ old('id_op')}}"
                         @else
-                          value="{{ $data_barang->kode_barang}}"
+                          value="{{ $operator->id_op}}"
                         @endif 
                         class="form-control">
                       </div>
@@ -38,23 +38,43 @@
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label @error('nama_barang')
+                        <label @error('nm_op')
                             class="text-danger"
-                        @enderror>Nama Barang
-                          @error('nama_barang')
+                        @enderror>Nama Operator
+                          @error('nm_op')
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="nama_barang" 
-                        @if (old('nama_barang'))
-                          value="{{ old('nama_barang')}}"
+                        <input type="text" name="nm_op" 
+                        @if (old('nm_op'))
+                          value="{{ old('nm_op')}}"
                         @else
-                          value="{{ $data_barang->nama_barang}}"
+                          value="{{ $operator->nm_op}}"
                         @endif 
                         class="form-control">
                       </div>
                     </div>
                   </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label @error('level')
+                          class="text-danger"
+                      @enderror>Level
+                        @error('level')
+                            | {{ $message}}
+                        @enderror
+                      </label>
+                      <input type="text" name="level" 
+                      @if (old('level'))
+                        value="{{ old('level')}}"
+                      @else
+                        value="{{ $operator->level}}"
+                      @endif 
+                      class="form-control">
+                    </div>
+                  </div>
+                </div>
 
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
