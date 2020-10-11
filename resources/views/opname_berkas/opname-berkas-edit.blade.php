@@ -13,7 +13,7 @@
                   {{-- <div class="alert alert-info">
                     <b>Note!</b> Not all browsers support HTML5 type input.
                   </div> --}}
-                <form action="{{ route('op-berkas.u', $data_barang->id)}}" method="POST">
+                <form action="{{ route('op-berkas.u', $opname_berkas->id)}}" method="POST">
                   @csrf
                   @method('patch')
                   <div class="row">
@@ -30,8 +30,8 @@
                         @if (old('kode_barang'))
                           value="{{ old('kode_barang')}}"
                         @else
-                          value="{{ $data_barang->kode_barang}}"
-                        @endif 
+                          value="{{ $opname_berkas->kode_barang}}"
+                        @endif
                         class="form-control">
                       </div>
                     </div>
@@ -45,12 +45,12 @@
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="nama_barang" 
+                        <input type="text" name="nama_barang"
                         @if (old('nama_barang'))
                           value="{{ old('nama_barang')}}"
                         @else
-                          value="{{ $data_barang->nama_barang}}"
-                        @endif 
+                          value="{{ $opname_berkas->nama_barang}}"
+                        @endif
                         class="form-control">
                       </div>
                     </div>
@@ -69,5 +69,5 @@
 @endsection
 
 @push('page-scripts')
-    
+
 @endpush
