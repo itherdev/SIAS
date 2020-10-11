@@ -15,7 +15,16 @@ class CreateOpnameBerkasTable extends Migration
     {
         Schema::create('opname_berkas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('kode_klarifikasi', 10)->unique();
+            $table->string('no_berkas', 10)->unique();
+            $table->year('tahun');
+            $table->string('kategori_berkas');
+            $table->string('uraian_berkas');
+            $table->string('jml_berkas', 10)->unique();
+            $table->string('jml_boks', 10)->unique();
+            $table->string('no_boks', 10)->unique();
+            $table->string('lokasi');
+            $table->string('ket');
         });
     }
 

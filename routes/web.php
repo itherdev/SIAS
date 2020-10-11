@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', function () {
         return view('index');
     });
+
     Route::get('crud', 'CrudController@index')->name('crud');
     Route::get('crud/tambah', 'CrudController@tambah')->name('cr.t');
     Route::post('crud', 'CrudController@simpan')->name('cr.s');
@@ -57,12 +58,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('arsip/{id}', 'ArsipController@update')->name('arsip.u');
 
     //Stockopname Berkas
-    Route::get('op-berkas', 'OpBerkasController@index')->name('op-berkas');
-    Route::get('op-berkas/tambah', 'OpBerkasController@create')->name('op-berkas.t');
-    Route::post('op-berkas', 'OpBerkasController@store')->name('op-berkas.s');
-    Route::delete('op-berkas/{id}', 'OpBerkasController@destroy')->name('op-berkas.d');
-    Route::get('op-berkas/{id}/edit', 'OpBerkasController@edit')->name('op-berkas.e');
-    Route::patch('op-berkas/{id}', 'OpBerkasController@update')->name('op-berkas.u');
+    Route::get('opname_berkas', 'OpnameberkasController@index')->name('op-berkas');
+    Route::get('opname_berkas/tambah', 'OpnameberkasController@create')->name('op-berkas.t');
+    Route::post('opname_berkas', 'OpnameberkasController@store')->name('op-berkas.s');
+    Route::delete('opname_berkas/{id}', 'OpnameberkasController@destroy')->name('op-berkas.d');
+    Route::get('opname_berkas/{id}/edit', 'OpnameberkasController@edit')->name('op-berkas.e');
+    Route::patch('opname_berkas/{id}', 'OpnameberkasController@update')->name('op-berkas.u');
     //Logout
     Route::get('logout', 'otentikasi\OtentikasiController@logout')->name('logout');
 });

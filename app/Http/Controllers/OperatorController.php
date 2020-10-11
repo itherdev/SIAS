@@ -47,14 +47,14 @@ class OperatorController extends Controller
 
         ]);
 
-        return redirect()->route('arsip')->with('message', 'Data berhasil disimpan');
+        return redirect()->route('operator')->with('message', 'Data berhasil disimpan');
     }
     private function _validation(Request $request)
     {
         $validation = $request->validate([
             'id_op' => 'required|max:10|min:3',
             'nm_op' => 'required|max:10|min:3',
-            'Level' => 'required|max:100|min:3',
+
         ]);
     }
 
