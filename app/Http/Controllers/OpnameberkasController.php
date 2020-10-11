@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\This;
 
-class ArsipController extends Controller
+use function GuzzleHttp\Promise\all;
+
+
+class OpnameberkasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +18,8 @@ class ArsipController extends Controller
      */
     public function index()
     {
-        $data_arsip = DB::table('data_arsip')->paginate(5);
-        return view('daftar-arsip.arsip', ['data_arsip' => $data_arsip]);
+        $opname_berkas = DB::table('opname_berkas')->paginate(3);
+        return view('opname_berkas.opname-berkas', ['opname_berkas' => $opname_berkas]);
     }
 
     /**
@@ -26,7 +29,7 @@ class ArsipController extends Controller
      */
     public function create()
     {
-        return view('daftar-arsip.arsip-tambah');
+        return view('opname_berkas.opname-berkas-tambah');
     }
 
     /**
@@ -39,25 +42,37 @@ class ArsipController extends Controller
     {
         $this->_validation($request);
 
-        DB::table('data_arsip')->insert([
+        DB::table('opname_berkas')->insert([
             [
                 'kode_klarifikasi' => $request->kode_klarifikasi,
-                'no_register' => $request->no_register,
+                'no_berkas' => $request->no_berkas,
                 'tahun' => $request->tahun,
-                'jenis_arsip' => $request->jenis_arsip
+                'kategori_berkas' => $request->kategori_berkas,
+                'uraian_berkas' => $request->uraian_berkas,
+                'jml_berkas' => $request->jml_berkas,
+                'jml_boks' => $request->jml_boks,
+                'no_boks' => $request->no_boks,
+                'lokasi' => $request->lokasi,
+                'ket' => $request->ket
             ],
 
         ]);
 
-        return redirect()->route('arsip')->with('message', 'Data berhasil disimpan');
+        return redirect()->route('op-berkas')->with('message', 'Data berhasil disimpan');
     }
 
     private function _validation(Request $request)
     {
         $validation = $request->validate([
             'kode_klarifikasi' => 'required|max:10|min:3',
-            'no_register' => 'required|max:10|min:3',
-            'jenis_arsip' => 'required|max:100|min:3',
+            'no_berkas' => 'required|max:10|min:3',
+            'kategori_berkas' => 'required|max:100|min:3',
+            'uraian_berkas' => 'required|max:100|min:3',
+            'jml_berkas' => 'required|max:10|min:3',
+            'jml_boks' => 'required|max:10|min:3',
+            'no_boks' => 'required|max:10|min:3',
+            'lokasi' => 'required|max:100|min:3',
+            'ket' => 'required|max:10|min:3'
         ]);
     }
 
@@ -69,8 +84,7 @@ class ArsipController extends Controller
      */
     public function show($id)
     {
-        $data_arsip = DB::table('data_arsip')->where('id', $id)->first();
-        return view('daftar-arsip.arsip-detail', ['data_arsip' => $data_arsip]);
+        //
     }
 
     /**
@@ -81,10 +95,9 @@ class ArsipController extends Controller
      */
     public function edit($id)
     {
-        $data_arsip = DB::table('data_arsip')->where('id', $id)->first();
-        return view('daftar-arsip.arsip-edit', ['data_arsip' => $data_arsip]);
+        $opname_berkas = DB::table('opname_berkas')->where('id', $id)->first();
+        return view('opname_berkas.opname-berkas', ['opname_berkas' => $opname_berkas]);
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -96,13 +109,19 @@ class ArsipController extends Controller
     public function update(Request $request, $id)
     {
         $this->_validation($request);
-        DB::table('data_arsip')->where('id', $id)->update([
+        DB::table('opname_berkas')->where('id', $id)->update([
             'kode_klarifikasi' => $request->kode_klarifikasi,
-            'no_register' => $request->no_register,
+            'no_berkas' => $request->no_berkas,
             'tahun' => $request->tahun,
-            'jenis_arsip' => $request->jenis_arsip
+            'kategori_berkas' => $request->kategori_berkas,
+            'uraian_berkas' => $request->uraian_berkas,
+            'jml_berkas' => $request->jml_berkas,
+            'jml_boks' => $request->jml_boks,
+            'no_boks' => $request->no_boks,
+            'lokasi' => $request->lokasi,
+            'ket' => $request->ket
         ]);
-        return redirect()->route('arsip')->with('message', 'Data berhasil diupdate');
+        return redirect()->route('op-berkas')->with('message', 'Data berhasil diupdate');
     }
 
     /**
@@ -113,7 +132,7 @@ class ArsipController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('data_arsip')->where('id', $id)->delete();
+        DB::table('opname_berkas')->where('id', $id)->delete();
 
         return redirect()->back()->with('message', 'Data berhasil dihapus');
     }
