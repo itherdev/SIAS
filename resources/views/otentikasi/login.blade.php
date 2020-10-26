@@ -7,14 +7,14 @@
   <title>Login &mdash; Stisla</title>
 
   <!-- General CSS Files -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{asset('assets/modules/bootstrap/css/bootstrap.min.css')}}" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
@@ -27,14 +27,14 @@
             <div class="login-brand">
               <img src="../assets/img/logo-pemda.png" alt="logo" width="100" class="shadow-light rounded-circle">
             </div>
-            
+
 
             <div class="card card-primary">
               <div class="card-header"><h4>Login</h4></div>
 
               <div class="card-body">
               <form method="POST" action="{{ route('login')}}" class="needs-validation" novalidate="">
-                @csrf 
+                @csrf
                 <div class="form-group">
                     <label for="email">Username</label>
                     <input id="email" type="text" class="form-control" name="username" tabindex="1" required autofocus>
@@ -79,7 +79,7 @@
                       Login
                     </button>
                   </div>
-                </form> 
+                </form>
             <div class="simple-footer">
               Copyright &copy; ©2020 | Magang D3 Kearsipan Universitas Diponegoro | Inas Nafisa Difa
             </div>
