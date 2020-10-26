@@ -54,8 +54,7 @@
                         class="form-control">
                       </div>
                     </div>
-                  </div>
-
+                  
                   <div class="col-md-6">
                     <div class="form-group">
                       <label @error('level')
@@ -74,7 +73,6 @@
                       class="form-control">
                     </div>
                   </div>
-                </div>
 
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>

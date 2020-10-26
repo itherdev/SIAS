@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\This;
 
 class OpnamebukuController extends Controller
 {
@@ -13,7 +15,8 @@ class OpnamebukuController extends Controller
      */
     public function index()
     {
-        //
+        $opname_buku = DB::table('opname_buku')->paginate(3);
+        return view('opname_buku.opname-buku', ['opname_buku' => $opname_buku]);
     }
 
     /**
@@ -23,7 +26,7 @@ class OpnamebukuController extends Controller
      */
     public function create()
     {
-        //
+        return view('opname_buku.opname-buku-tambah');
     }
 
     /**
@@ -34,7 +37,37 @@ class OpnamebukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->_validation($request);
+
+        DB::table('opname_buku')->insert([
+            [
+                'kode_klarifikasi' => $request->kode_klarifikasi,
+                'no_buku' => $request->no_buku,
+                'no_register' => $request->no_register,
+                'tahun' => $request->tahun,
+                'kategori_buku' => $request->kategori_buku,
+                'lokasi' => $request->lokasi,
+                'ket' => $request->ket,
+                'tingkat_perkembangan' => $request->tingkat_perkembangan
+            ],
+
+        ]);
+
+        return redirect()->route('op-buku')->with('message', 'Data berhasil disimpan');
+    }
+
+    private function _validation(Request $request)
+    {
+        $validation = $request->validate([
+            'kode_klarifikasi' => 'required|max:10|min:3',
+            'no_buku' => 'required|max:10|min:3',
+            'no_register' => 'request',
+            'tahun' => 'request',
+            'kategori_buku' => 'required|max:100|min:3',
+            'lokasi' => 'required|max:100|min:3',
+            'ket' => 'required|max:100|min:3',
+            'tingkat_perkembangan' => 'request|max:100|min:2'
+        ]);
     }
 
     /**
@@ -56,7 +89,8 @@ class OpnamebukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $opname_buku = DB::table('opname_buku')->where('id', $id)->first();
+        return view('opname_buku.opname-buku-edit', ['opname_buku' => $opname_buku]);
     }
 
     /**
@@ -68,7 +102,19 @@ class OpnamebukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->_validation($request);
+        DB::table('opname_buku')->where('id', $id)->update([
+            'kode_klarifikasi' => $request->kode_klarifikasi,
+            'no_buku' => $request->no_buku,
+            'no_register' => $request->no_register,
+            'tahun' => $request->tahun,
+            'kategori_buku' => $request->kategori_buku,
+            'lokasi' => $request->lokasi,
+            'ket' => $request->ket,
+            'tingkat_perkembangan' => $request->tingkat_perkembangan
+
+        ]);
+        return redirect()->route('op-buku')->with('message', 'Data berhasil diupdate');
     }
 
     /**
@@ -79,6 +125,8 @@ class OpnamebukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('opname_buku')->where('id', $id)->delete();
+
+        return redirect()->back()->with('message', 'Data berhasil dihapus');
     }
 }
