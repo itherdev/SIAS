@@ -5,5 +5,3 @@ function set_active($uri){
   }
   return Request::path() == $uri ? 'active' : '';
 }
-
-?>

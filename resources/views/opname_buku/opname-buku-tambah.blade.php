@@ -13,7 +13,7 @@
                   {{-- <div class="alert alert-info">
                     <b>Note!</b> Not all browsers support HTML5 type input.
                   </div> --}}
-                <form action="{{ route('op-berkas.s')}}" method="POST">
+                <form action="{{ route('op-buku.s')}}" method="POST">
                   @csrf
                   <div class="row">
                     <div class="col-md-6">
@@ -31,16 +31,29 @@
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label @error('no_berkas')
+                        <label @error('no_buku')
                             class="text-danger"
-                        @enderror>No Berkas
-                          @error('no_berkas')
+                        @enderror>No Buku
+                          @error('no_buku')
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="no_berkas" value="{{ old('no_berkas')}}" class="form-control">
+                        <input type="text" name="no_buku" value="{{ old('no_buku')}}" class="form-control">
                       </div>
-                    </div>                  
+                    </div>
+                    
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label @error('no_register')
+                            class="text-danger"
+                        @enderror>No Register
+                          @error('no_register')
+                              | {{ $message}}
+                          @enderror
+                        </label>
+                        <input type="text" name="no_register" value="{{ old('no_register')}}" class="form-control">
+                      </div>
+                    </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
@@ -57,66 +70,14 @@
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label @error('kategori_berkas')
+                        <label @error('kategori_buku')
                             class="text-danger"
-                        @enderror>Kategori Berkas
-                          @error('kategori_berkas')
+                        @enderror>Kategori Buku
+                          @error('kategori_buku')
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="kategori_berkas" value="{{ old('kategori_berkas')}}" class="form-control">
-                      </div>
-                    </div>
-                    
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label @error('uraian_berkas')
-                            class="text-danger"
-                        @enderror>Uraian Berkas
-                          @error('uraian_berkas')
-                              | {{ $message}}
-                          @enderror
-                        </label>
-                        <input type="text" name="uraian_berkas" value="{{ old('uraian_berkas')}}" class="form-control">
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label @error('jml_berkas')
-                            class="text-danger"
-                        @enderror>jml_berkas
-                          @error('jml_berkas')
-                              | {{ $message}}
-                          @enderror
-                        </label>
-                        <input type="text" name="jml_berkas" value="{{ old('jml_berkas')}}" class="form-control">
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label @error('jml_boks')
-                            class="text-danger"
-                        @enderror>Jumlah Boks
-                          @error('jml_boks')
-                              | {{ $message}}
-                          @enderror
-                        </label>
-                        <input type="text" name="jml_boks" value="{{ old('jml_boks')}}" class="form-control">
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label @error('no_boks')
-                            class="text-danger"
-                        @enderror>No Boks
-                          @error('no_boks')
-                              | {{ $message}}
-                          @enderror
-                        </label>
-                        <input type="text" name="no_boks" value="{{ old('no_boks')}}" class="form-control">
+                        <input type="text" name="kategori_buku" value="{{ old('kategori_buku')}}" class="form-control">
                       </div>
                     </div>
 
@@ -145,8 +106,22 @@
                         <input type="text" name="ket" value="{{ old('ket')}}" class="form-control">
                       </div>
                     </div>
-                  </div>
 
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label @error('tingkat_perkembangan')
+                            class="text-danger"
+                        @enderror>Tingkat Perkembangan
+                          @error('tingkat_perkembangan')
+                              | {{ $message}}
+                          @enderror
+                        </label>
+                        <input type="text" name="tingkat_perkembangan" value="{{ old('tingkat_perkembangan')}}" class="form-control">
+                      </div>
+                    </div>
+
+
+                
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

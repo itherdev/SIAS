@@ -68,11 +68,11 @@ class OpnameberkasController extends Controller
             'no_berkas' => 'required|max:10|min:3',
             'kategori_berkas' => 'required|max:100|min:3',
             'uraian_berkas' => 'required|max:100|min:3',
-            'jml_berkas' => 'required|max:10|min:3',
-            'jml_boks' => 'required|max:10|min:3',
-            'no_boks' => 'required|max:10|min:3',
+            'jml_berkas' => 'required',
+            'jml_boks' => 'required',
+            'no_boks' => 'required',
             'lokasi' => 'required|max:100|min:3',
-            'ket' => 'required|max:10|min:3'
+            'ket' => 'required|max:100|min:3'
         ]);
     }
 
@@ -84,7 +84,6 @@ class OpnameberkasController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**

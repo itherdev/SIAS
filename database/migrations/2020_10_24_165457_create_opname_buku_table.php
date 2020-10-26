@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOpnameBerkasTable extends Migration
+class CreateOpnameBukuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,16 @@ class CreateOpnameBerkasTable extends Migration
      */
     public function up()
     {
-        Schema::create('opname_berkas', function (Blueprint $table) {
+        Schema::create('opname_buku', function (Blueprint $table) {
             $table->id();
             $table->string('kode_klarifikasi', 10)->unique();
-            $table->string('no_berkas');
+            $table->string('no_buku', 10);
+            $table->string('no_register', 10);
             $table->year('tahun');
-            $table->string('kategori_berkas');
-            $table->string('uraian_berkas');
-            $table->string('jml_berkas');
-            $table->string('jml_boks');
-            $table->string('no_boks');
+            $table->string('kategori_buku');
             $table->string('lokasi');
             $table->string('ket');
+            $table->string('tingkat_perkembangan');
         });
     }
 
@@ -35,6 +33,6 @@ class CreateOpnameBerkasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('opname_berkas');
+        Schema::dropIfExists('opname_buku');
     }
 }
