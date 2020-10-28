@@ -15,7 +15,15 @@ class CreatePeminjamanBerkasTable extends Migration
     {
         Schema::create('peminjaman_berkas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('no_berkas', 10)->unique();
+            $table->string('tgl_pinjam');
+            $table->year('jml_berkas');
+            $table->string('nama_peminjam');
+            $table->string('uraian');
+            $table->string('unit_pengolah');
+            $table->string('nama_petugas');
+            $table->string('kategori_petugas');
+            $table->string('status');
         });
     }
 
