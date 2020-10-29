@@ -87,7 +87,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('peminjaman-arsip/berkas/tambah', 'PeminjamanberkasController@create')->name('pa-berkas.t');
     Route::post('peminjaman-arsip/berkas', 'PeminjamanberkasController@store')->name('pa-berkas.s');
     Route::delete('peminjaman-arsip/berkas/{id}', 'PeminjamanberkasController@destroy')->name('pa-berkas.d');
-    Route::get('peminjaman-arsip/berkas/{id}/edit', 'PeminjamanberkasController@edit')->name('pa-berkas.e');
+    Route::get('peminjaman-arsip/berkas//edit/{id}', 'PeminjamanberkasController@edit')->name('pa-berkas.e');
     Route::patch('peminjaman-arsip/berkas/{id}', 'PeminjamanberkasController@update')->name('pa-berkas.u');
 
     //peminjaman arsip buku
@@ -95,7 +95,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('peminjaman-arsip/buku/tambah', 'PeminjamanbukuController@create')->name('pa-buku.t');
     Route::post('peminjaman-arsip/buku', 'PeminjamanbukuController@store')->name('pa-buku.s');
     Route::delete('peminjaman-arsip/buku/{id}', 'PeminjamanbukuController@destroy')->name('pa-buku.d');
-    Route::get('peminjaman-arsip/buku/{id}/edit', 'PeminjamanbukuController@edit')->name('pa-buku.e');
+    Route::get('peminjaman-arsip/buku//edit/{id}', 'PeminjamanbukuController@edit')->name('pa-buku.e');
     Route::patch('peminjaman-arsip/buku/{id}', 'PeminjamanbukuController@update')->name('pa-buku.u');
 
     /*------------------ pengembalian arsip --------------------------*/

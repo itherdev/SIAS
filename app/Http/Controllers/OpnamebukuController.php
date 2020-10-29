@@ -62,12 +62,12 @@ class OpnamebukuController extends Controller
         $validation = $request->validate([
             'kode_klarifikasi' => 'required|max:10|min:3',
             'no_buku' => 'required|max:10|min:3',
-            'no_register' => 'request',
-            'tahun' => 'request',
+            'no_register' => 'required',
+            'tahun' => 'required',
             'kategori_buku' => 'required|max:100|min:3',
             'lokasi' => 'required|max:100|min:3',
             'ket' => 'required|max:100|min:3',
-            'tingkat_perkembangan' => 'request|max:100|min:2'
+            'tingkat_perkembangan' => 'required|max:100|min:2'
         ]);
     }
 

@@ -5,7 +5,9 @@
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
-            <a href="{{ route('op-buku.t')}}" class="btn btn-icon icon-left btn-primary">
+            <div class="card">
+                <div class="card-body">
+                    <a href="{{ route('op-buku.t')}}" class="btn btn-icon icon-left btn-primary">
                 <i class="far fa-edit">Tambah Data</i>
             </a>
             <hr>
@@ -52,6 +54,8 @@
                     @endforeach
             </table>
             {{$opname_buku->links()}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
