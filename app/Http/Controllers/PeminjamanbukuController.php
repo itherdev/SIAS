@@ -40,16 +40,16 @@ class PeminjamanbukuController extends Controller
 
         DB::table('peminjaman_buku')->insert([
             [
-                'kode_klarifikasi' => $request->kode_klarifikasi,
-                'no_berkas' => $request->no_berkas,
-                'tahun' => $request->tahun,
-                'kategori_berkas' => $request->kategori_berkas,
-                'uraian_berkas' => $request->uraian_berkas,
-                'jml_berkas' => $request->jml_berkas,
-                'jml_boks' => $request->jml_boks,
-                'no_boks' => $request->no_boks,
-                'lokasi' => $request->lokasi,
-                'ket' => $request->ket
+                'no_buku' => $request->no_buku,
+                'no_register' => $request->no_register,
+                'tgl_pinjam' => $request->tgl_pinjam,
+                'jml_buku' => $request->jml_buku,
+                'nama_peminjam' => $request->nama_peminjam,
+                'uraian' => $request->uraian,
+                'unit_pengolah' => $request->unit_pengolah,
+                'nama_petugas' => $request->nama_petugas,
+                'kategori_petugas' => $request->kategori_petugas,
+                'status' => $request->status
             ],
 
         ]);
@@ -60,15 +60,11 @@ class PeminjamanbukuController extends Controller
     private function _validation(Request $request)
     {
         $validation = $request->validate([
-            'kode_klarifikasi' => 'required|max:10|min:3',
-            'no_berkas' => 'required|max:10|min:3',
-            'kategori_berkas' => 'required|max:100|min:3',
-            'uraian_berkas' => 'required|max:100|min:3',
-            'jml_berkas' => 'required',
-            'jml_boks' => 'required',
-            'no_boks' => 'required',
-            'lokasi' => 'required|max:100|min:3',
-            'ket' => 'required|max:100|min:3'
+            'no_buku' => 'required|max:10|min:3',
+            'nama_peminjam' => 'required|max:100|min:3',
+            'uraian' => 'required|max:100|min:3',
+            'nama_petugas' => 'required|max:50|min:3',
+            'status' => 'required|max:100|min:3'
         ]);
     }
 
@@ -106,16 +102,16 @@ class PeminjamanbukuController extends Controller
     {
         $this->_validation($request);
         DB::table('peminjaman_buku')->where('id', $id)->update([
-            'kode_klarifikasi' => $request->kode_klarifikasi,
-            'no_berkas' => $request->no_berkas,
-            'tahun' => $request->tahun,
-            'kategori_berkas' => $request->kategori_berkas,
-            'uraian_berkas' => $request->uraian_berkas,
-            'jml_berkas' => $request->jml_berkas,
-            'jml_boks' => $request->jml_boks,
-            'no_boks' => $request->no_boks,
-            'lokasi' => $request->lokasi,
-            'ket' => $request->ket
+            'no_buku' => $request->no_buku,
+            'no_register' => $request->no_register,
+            'tgl_pinjam' => $request->tgl_pinjam,
+            'jml_buku' => $request->jml_buku,
+            'nama_peminjam' => $request->nama_peminjam,
+            'uraian' => $request->uraian,
+            'unit_pengolah' => $request->unit_pengolah,
+            'nama_petugas' => $request->nama_petugas,
+            'kategori_petugas' => $request->kategori_petugas,
+            'status' => $request->status
         ]);
         return redirect()->route('peminjaman-arsip/buku')->with('message', 'Data berhasil diupdate');
     }

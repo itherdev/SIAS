@@ -40,9 +40,10 @@ class PeminjamanberkasController extends Controller
 
         DB::table('peminjaman_berkas')->insert([
             [
-                'no_berkas' => $request->no_berkas,
+                'no_buku' => $request->no_buku,
                 'tgl_pinjam' => $request->tgl_pinjam,
-                'jml_berkas' => $request->jml_berkas,
+                'jml_buku' => $request->jml_buku,
+                'no_register' => $request->no_register,
                 'nama_peminjam' => $request->nama_peminjam,
                 'uraian' => $request->uraian,
                 'unit_pengolah' => $request->unit_pengolah,
@@ -62,8 +63,8 @@ class PeminjamanberkasController extends Controller
             'no_berkas' => 'required|max:10|min:3',
             'nama_peminjam' => 'required|max:100|min:3',
             'uraian' => 'required|max:100|min:3',
-            'nama_petugas' => 'required|max:10|min:3',
-            'status' => 'required|max:10|min:3'
+            'nama_petugas' => 'required|max:50|min:3',
+            'status' => 'required|max:100|min:3'
         ]);
     }
 
