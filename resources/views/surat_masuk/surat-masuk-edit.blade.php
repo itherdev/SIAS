@@ -82,10 +82,10 @@
                         @enderror
                       </label>
                       <input type="date" name="tgl_terima" class="form-control"
-                      @if (old('tgl_surat'))
-                          value="{{ old('tgl_surat')}}"
+                      @if (old('tgl_terima'))
+                          value="{{ old('tgl_terima')}}"
                         @else
-                          value="{{ $surat_masuk->tgl_surat}}"
+                          value="{{ $surat_masuk->tgl_terima}}"
                         @endif >
                     </div>
                   </div>
@@ -118,10 +118,10 @@
                     @enderror
                   </label>
                   <input type="text" name="perihal" class="form-control"
-                  @if (old('sumber_surat'))
-                          value="{{ old('sumber_surat')}}"
+                  @if (old('perihal'))
+                          value="{{ old('perihal')}}"
                         @else
-                          value="{{ $surat_masuk->sumber_surat}}"
+                          value="{{ $surat_masuk->perihal}}"
                         @endif >
                 </div>
               </div>

@@ -54,7 +54,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('arsip/{id}', 'ArsipController@destroy')->name('arsip.d');
     Route::get('arsip/{id}/edit', 'ArsipController@edit')->name('arsip.e');
     Route::patch('arsip/{id}', 'ArsipController@update')->name('arsip.u');
-    Route::get('/arsip/cari', 'ArsipController@cari')->name('arsip.c');
+    Route::get('arsip/cari', 'ArsipController@cari')->name('arsip.c');
 
     /*------------------ Stock Opname--------------------------*/
     //Stockopname Berkas
@@ -89,6 +89,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('surat-keluar/{id}', 'SuratkeluarController@destroy')->name('surat-keluar.d');
     Route::get('surat-keluar//edit/{id}', 'SuratkeluarController@edit')->name('surat-keluar.e');
     Route::patch('surat-keluar/{id}', 'SuratkeluarController@update')->name('surat-keluar.u');
+    Route::get('surat-keluar/cari', 'SuratkeluarController@cari')->name('surat-keluar.c');
 
     //Logout
     Route::get('logout', 'otentikasi\OtentikasiController@logout')->name('logout');

@@ -1,24 +1,32 @@
 @extends('layouts.master')
 
-@section('title', 'Daftar Arsip')
+@section('title', 'Surat Keluar')
 @section('content')
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
+                <div class="card-header">
+                    <h4>Surat Keluar</h4>
+                  </div>
                 <div class="card-body">
-                    <a href="{{ route('arsip.t')}}" class="btn btn-icon icon-left btn-primary">
-                        <i class="far fa-edit">Tambah Data</i>
-                    </a>
-                    <br>
-                    <br>
-                        {{-- Cari Data --}}
-                        <form action="{{ route('arsip.c')}}" class="form-inline my-2 my-lg-0" method="GET">
-                                <input class="form-control mr-sm-2" type="search"  name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search" data-width="250">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="float-left">
+                        <a href="{{ route('surat-keluar.t')}}" class="btn btn-icon icon-left btn-primary">
+                            <i class="far fa-edit">Tambah Data</i>
+                        </a>
+                    </div>
+                    <div class="float-right">
+                        <form action="{{ route('surat-keluar.c')}}" class="form-inline" method="GET">
+                          <div class="input-group">
+                            <input type="text" class="form-control" name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                            </div>
+                          </div>
                         </form>
+                      </div>
 
-                    <hr>
+                      <br><br><br>
                     @if (session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
                         <div class="alert-body">
@@ -32,23 +40,24 @@
                     <table class="table table-striped table-bordered table-hover table-sm">
                         <tr>
                             <th>No</th>
-                            <th>Kode Klarifikasi</th>
-                            <th>No Register</th>
-                            <th>Tahun</th>
-                            <th>Jenis Arsip</th>
+                            <th>No Surat</th>
+                            <th>Tujuan Surat</th>
+                            <th>Perihal</th>
+                            <th>Tanggal Surat</th>
                             <th>Action</th>
                         </tr>
-                            @foreach ($data_arsip as $no => $data)
+                            @foreach ($surat_keluar as $no => $data)
                             <tr>
-                                <td>{{ $data_arsip->firstItem()+$no}}</td>
-                                <td>{{ $data->kode_klarifikasi}}</td>
-                                <td>{{ $data->no_register}}</td>
-                                <td>{{ $data->tahun}}</td>
-                                <td>{{ $data->jenis_arsip}}</td>
+                                <td>{{ $surat_keluar->firstItem()+$no}}</td>
+                              
+                                <td>{{ $data->no_surat}}</td>
+                                <td>{{ $data->tujuan_surat}}</td>
+                                <td>{{ $data->perihal}}</td>
+                                <td>{{ $data->tgl_surat}}</td>
                                 <td>
-                                    <a href="{{ route('arsip.e',$data->id)}}" class="badge badge-primary">Edit</a>
+                                    <a href="{{ route('surat-keluar.e',$data->id)}}" class="badge badge-primary">Edit</a>
                                     <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                                    <form action="{{ route('arsip.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
+                                    <form action="{{ route('surat-keluar.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
                                         @csrf
                                         @method('delete')
                                     </form>
@@ -57,9 +66,9 @@
                             </tr>
                             @endforeach
                     </table>
-                    {{$data_arsip->links()}}
+                    {{$surat_keluar->links()}}
                     <div> Jumlah Data 
-                        <?php $data_arsip = DB::table('data_arsip')->count(); print_r($data_arsip); ?>
+                        <?php $surat_keluar = DB::table('surat_keluar')->count(); print_r($surat_keluar); ?>
                     </div>
                 </div>
             </div>

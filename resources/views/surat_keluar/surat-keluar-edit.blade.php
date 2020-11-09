@@ -13,85 +13,119 @@
                   {{-- <div class="alert alert-info">
                     <b>Note!</b> Not all browsers support HTML5 type input.
                   </div> --}}
-                <form action="{{ route('arsip.u', $data_arsip->id)}}" method="POST">
+                <form action="{{ route('surat-keluar.u', $surat_keluar->id)}}" method="POST">
                   @csrf
                   @method('patch')
                   <div class="row">
+                   
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label @error('kode_klarifikasi')
+                        <label @error('no_surat')
                             class="text-danger"
-                        @enderror>Kode Klarifikasi
-                          @error('kode_klarifikasi')
+                        @enderror>No Surat
+                          @error('no_surat')
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="kode_klarifikasi"
-                        @if (old('kode_klarifikasi'))
-                          value="{{ old('kode_klarifikasi')}}"
+                        <input type="text" name="no_surat" class="form-control"
+                        @if (old('no_surat'))
+                          value="{{ old('no_surat')}}"
                         @else
-                          value="{{ $data_arsip->kode_klarifikasi}}"
-                        @endif 
-                        class="form-control">
+                          value="{{ $surat_keluar->no_surat}}"
+                        @endif >
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label @error('no_register')
+                        <label @error('tgl_surat')
                             class="text-danger"
-                        @enderror>No Register
-                          @error('no_register')
+                        @enderror>Tangal Surat
+                          @error('tgl_surat')
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="no_register" 
-                        @if (old('no_register'))
-                          value="{{ old('no_register')}}"
+                        <input type=date name="tgl_surat" class="form-control"
+                        @if (old('tgl_surat'))
+                          value="{{ old('tgl_surat')}}"
                         @else
-                          value="{{ $data_arsip->no_register}}"
-                        @endif 
-                        class="form-control">
+                          value="{{ $surat_keluar->tgl_surat}}"
+                        @endif >
                       </div>
                     </div>
 
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label @error('tahun')
-                            class="text-danger"
-                        @enderror>Nama Barang
-                          @error('tahun')
-                              | {{ $message}}
-                          @enderror
-                        </label>
-                        <input type="text" name="tahun" 
-                        @if (old('tahun'))
-                          value="{{ old('tahun')}}"
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label @error('pengolah')
+                          class="text-danger"
+                      @enderror>Pengolah
+                        @error('pengolah')
+                            | {{ $message}}
+                        @enderror
+                      </label>
+                      <input type="text" name="pengolah" class="form-control"
+                      @if (old('pengolah'))
+                          value="{{ old('pengolah')}}"
                         @else
-                          value="{{ $data_arsip->tahun}}"
-                        @endif 
-                        class="form-control">
-                      </div>
+                          value="{{ $surat_keluar->pengolah}}"
+                        @endif >
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label @error('jenis_arsip')
-                            class="text-danger"
-                        @enderror>Jenis Arsip
-                          @error('jenis_arsip')
-                              | {{ $message}}
-                          @enderror
-                        </label>
-                        <input type="text" name="jenis_arsip" 
-                        @if (old('jenis_arsip'))
-                          value="{{ old('jenis_arsip')}}"
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label @error('tujuan_surat')
+                        class="text-danger"
+                    @enderror>tujuan Surat
+                      @error('tujuan_surat')
+                          | {{ $message}}
+                      @enderror
+                    </label>
+                    <input type="text" name="tujuan_surat" class="form-control" 
+                    @if (old('tujuan_surat'))
+                          value="{{ old('tujuan_surat')}}"
                         @else
-                          value="{{ $data_arsip->jenis_arsip}}"
-                        @endif 
-                        class="form-control">
-                      </div>
-                    </div>
+                          value="{{ $surat_keluar->tujuan_surat}}"
+                        @endif >
+                  </div>
+                </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label @error('perihal')
+                      class="text-danger"
+                  @enderror>Perihal
+                    @error('perihal')
+                        | {{ $message}}
+                    @enderror
+                  </label>
+                  <input type="text" name="perihal" class="form-control"
+                  @if (old('perihal'))
+                          value="{{ old('perihal')}}"
+                        @else
+                          value="{{ $surat_keluar->perihal}}"
+                        @endif >
+                </div>
+              </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label @error('keterangan')
+                    class="text-danger"
+                @enderror>Keterangan
+                  @error('keterangan')
+                      | {{ $message}}
+                  @enderror
+                </label>
+                <input type="text" name="keterangan" class="form-control"
+                @if (old('keterangan'))
+                          value="{{ old('keterangan')}}"
+                        @else
+                          value="{{ $surat_keluar->keterangan}}"
+                        @endif >
+              </div>
+            </div>
+
 
                   </div>
 

@@ -27,7 +27,7 @@ class SuratmasukController extends Controller
 
         // mengambil data dari table pegawai sesuai pencarian data
         $surat_masuk = DB::table('surat_masuk')
-            ->where('jenis_arsip', 'like', "%" . $cari . "%")
+            ->where('sumber_surat', 'like', "%" . $cari . "%")
             ->paginate();
 
         // mengirim data pegawai ke view index
