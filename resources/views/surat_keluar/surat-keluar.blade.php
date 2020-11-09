@@ -7,30 +7,18 @@
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4>Data Arsip </h4>
-                    <hr>
-                    <div class="float-left">
-                        <a href="{{ route('arsip.t')}}" class="btn btn-icon icon-left btn-primary">
-                            <i class="far fa-edit">Tambah Data</i>
-                        </a>
-                    </div>
-                    <div class="float-right">
-                        <form action="{{ route('arsip.c')}}" class="form-inline" method="GET">
-                          <div class="input-group">
-                            <input type="text" class="form-control" name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search">
-                            <div class="input-group-append">
-                              <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
+                    <a href="{{ route('arsip.t')}}" class="btn btn-icon icon-left btn-primary">
+                        <i class="far fa-edit">Tambah Data</i>
+                    </a>
+                    <br>
+                    <br>
                         {{-- Cari Data --}}
-                        {{-- <form action="{{ route('arsip.c')}}" class="form-inline my-2 my-lg-0" method="GET">
+                        <form action="{{ route('arsip.c')}}" class="form-inline my-2 my-lg-0" method="GET">
                                 <input class="form-control mr-sm-2" type="search"  name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search" data-width="250">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                        </form> --}}
+                        </form>
 
-                    <br><br><br>
+                    <hr>
                     @if (session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
                         <div class="alert-body">
