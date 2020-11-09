@@ -10,6 +10,14 @@
                     <a href="{{ route('arsip.t')}}" class="btn btn-icon icon-left btn-primary">
                         <i class="far fa-edit">Tambah Data</i>
                     </a>
+                    <br>
+                    <br>
+                        {{-- Cari Data --}}
+                        <form action="{{ route('arsip.c')}}" class="form-inline my-2 my-lg-0" method="GET">
+                                <input class="form-control mr-sm-2" type="search"  name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search" data-width="250">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+
                     <hr>
                     @if (session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
@@ -50,6 +58,9 @@
                             @endforeach
                     </table>
                     {{$data_arsip->links()}}
+                    <div> Jumlah Data 
+                        <?php $data_arsip = DB::table('data_arsip')->count(); print_r($data_arsip); ?>
+                    </div>
                 </div>
             </div>
         </div>

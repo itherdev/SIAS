@@ -19,6 +19,21 @@ class ArsipController extends Controller
         return view('daftar-arsip.arsip', ['data_arsip' => $data_arsip]);
     }
 
+    // Cari Data
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+
+        // mengambil data dari table pegawai sesuai pencarian data
+        $data_arsip = DB::table('data_arsip')
+            ->where('jenis_arsip', 'like', "%" . $cari . "%")
+            ->paginate();
+
+        // mengirim data pegawai ke view index
+        return view('daftar-arsip.arsip', ['data_arsip' => $data_arsip]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

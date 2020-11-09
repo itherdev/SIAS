@@ -4,9 +4,9 @@
         <a href="index.html">SIAS DISDUKCAPIL</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">St</a>
+        <a href="index.html">SIAS</a>
       </div>
-      <ul class="sidebar-menu">
+        <ul class="sidebar-menu">
           <li class="menu-header">Dashboard</li>
           <li class="{{set_active('dashboard')}}">
             <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
@@ -37,11 +37,10 @@
               <li><a class="nav-link" href="#">Daftar Arsip</a></li>
               <li><a class="nav-link" href="#">Laporan Stock Opname Berkas</a></li>
               <li><a class="nav-link" href="#">Laporan Stock Opname Buku</a></li>
-              <li><a class="nav-link" href="#">Laporan Pengembalian dan Peminjaman Arsip Berkas</a></li>
-              <li><a class="nav-link" href="#">Laporan Pengembalian dan Peminjaman Arsip Buku</a></li>
+              <li><a class="nav-link" href="#">Laporan Surat Masuk</a></li>
+              <li><a class="nav-link" href="#">Laporan Surat Keluar</a></li>
             </ul>
           </li>
-          <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
         </ul>
 
         {{-- <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

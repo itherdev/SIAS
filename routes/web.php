@@ -54,7 +54,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('arsip/{id}', 'ArsipController@destroy')->name('arsip.d');
     Route::get('arsip/{id}/edit', 'ArsipController@edit')->name('arsip.e');
     Route::patch('arsip/{id}', 'ArsipController@update')->name('arsip.u');
-
+    Route::get('/arsip/cari', 'ArsipController@cari')->name('arsip.c');
 
     /*------------------ Stock Opname--------------------------*/
     //Stockopname Berkas
