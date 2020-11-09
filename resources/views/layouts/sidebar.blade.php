@@ -9,35 +9,35 @@
         <ul class="sidebar-menu">
           <li class="menu-header">Dashboard</li>
           <li class="{{set_active('dashboard')}}">
-            <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+            <a href="{{ route('login')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
           </li>
           <li class="menu-header">Starter</li>
+          <li class="{{set_active('surat-masuk')}}">
+            <a href="{{ route('surat-masuk')}}" class="nav-link"><i class="fas fa-inbox"></i></i><span>Surat Masuk</span></a>
+          </li>
+          <li class="{{set_active('surat-keluar')}}">
+            <a href="{{ route('surat-keluar')}}" class="nav-link"><i class="fas fa-paper-plane"></i><span>Surat Keluar</span></a>
+          </li>
           <li class="{{ set_active('arsip') }}">
-            <a href="{{ route('arsip')}}" class="nav-link"><i class="fas fa-fire"></i><span>Daftar Arsip</span></a>
+            <a href="{{ route('arsip')}}" class="nav-link"><i class="fas fa-archive"></i><span>Daftar Arsip</span></a>
           </li>
           <li class="nav-item dropdown {{ set_active(['op-berkas', 'op-buku'])}}">
-            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Stock Opname</span></a>
+            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cubes"></i> <span>Stock Opname</span></a>
             <ul class="dropdown-menu">
               <li class="{{ set_active(['op-berkas', 'op-berkas/tambah', 'op-berkas/edit/$1']) }}"><a class="nav-link" href="{{ route('op-berkas')}}">Stock Opname Berkas</a></li>
               <li class="{{ set_active('op-buku') }}"><a class="nav-link" href="{{ route('op-buku')}}">Stock Opname Buku</a></li>
             </ul>
           </li>
-          <li class="{{set_active('surat-masuk')}}">
-            <a href="{{ route('surat-masuk')}}" class="nav-link"><i class="fas fa-fire"></i><span>Surat Masuk</span></a>
-          </li>
-          <li class="{{set_active('surat-keluar')}}">
-            <a href="{{ route('surat-keluar')}}" class="nav-link"><i class="fas fa-fire"></i><span>Surat Keluar</span></a>
-          </li>
           <li class="{{ set_active('operator') }}">
-            <a href="{{ route('operator')}}" class="nav-link"><i class="fas fa-fire"></i><span>Daftar Operator</span></a>
+            <a href="{{ route('operator')}}" class="nav-link"><i class="fas fa-user"></i><span>Daftar Operator</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Laporan/Report</span></a>
+            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-chart-bar"></i> <span>Laporan/Report</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="#">Daftar Arsip</a></li>
               <li><a class="nav-link" href="#">Laporan Stock Opname Berkas</a></li>
               <li><a class="nav-link" href="#">Laporan Stock Opname Buku</a></li>
-              <li><a class="nav-link" href="#">Laporan Surat Masuk</a></li>
+              <li class="{{ set_active('surat-masuk.ck') }}"><a class="nav-link" href="{{ route('surat-masuk.ck')}}">Laporan Surat Masuk</a></li>
               <li><a class="nav-link" href="#">Laporan Surat Keluar</a></li>
             </ul>
           </li>

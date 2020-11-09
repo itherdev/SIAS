@@ -81,6 +81,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('surat-masuk//edit/{id}', 'SuratmasukController@edit')->name('surat-masuk.e');
     Route::patch('surat-masuk/{id}', 'SuratmasukController@update')->name('surat-masuk.u');
     Route::get('surat-masuk/cari', 'SuratmasukController@cari')->name('surat-masuk.c');
+    Route::get('surat-masuk-cetak', 'SuratmasukController@cetakForm')->name('surat-masuk.ck');
 
     //Surat Keluar
     Route::get('surat-keluar', 'SuratkeluarController@index')->name('surat-keluar');

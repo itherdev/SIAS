@@ -139,4 +139,9 @@ class SuratmasukController extends Controller
 
         return redirect()->back()->with('message', 'Data berhasil dihapus');
     }
+
+    public function cetakForm()
+    {
+        return view('surat_masuk.surat-masuk-cetak');
+    }
 }

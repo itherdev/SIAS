@@ -32,7 +32,7 @@
                   <h4>Surat Masuk</h4>
                 </div>
                 <div class="card-body">
-                  42
+                  <?php $surat_masuk = DB::table('surat_masuk')->count(); print_r($surat_masuk); ?>
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@
                   <h4>Surat Keluar</h4>
                 </div>
                 <div class="card-body">
-                  1,201
+                  <?php $surat_keluar = DB::table('surat_keluar')->count(); print_r($surat_keluar); ?>
                 </div>
               </div>
             </div>

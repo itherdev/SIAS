@@ -30,7 +30,7 @@
 
 <body>
   <div id="app">
-    <div class="main-wrapper main-wrapper-1">
+    <div class="main-wrapper">
       <div class="navbar-bg"></div>
       @include('layouts.header')
       @include('layouts.sidebar')
