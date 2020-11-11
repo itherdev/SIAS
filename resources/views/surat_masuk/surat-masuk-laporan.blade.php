@@ -5,28 +5,27 @@
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
-            <div class="card">
+            <div class="card card-info card-outline">
                 <div class="card-header">
-                    <h4>Surat Masuk</h4>
+                    <h4>Laporan Surat Masuk</h4>
                 </div>
+                
                 <div class="card-body">
-                    <div class="float-left">
-                        <a href="{{ route('surat-masuk.t')}}" class="btn btn-icon icon-left btn-primary">
-                            <i class="far fa-edit">Tambah Data</i>
-                        </a>
-                    </div>
-                    <div class="float-right">
-                        <form action="{{ route('surat-masuk.c')}}" class="form-inline" method="GET">
-                          <div class="input-group">
-                            <input type="text" class="form-control" name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search">
-                            <div class="input-group-append">
-                              <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-
-                      <br><br><br>
+                    {{-- <div class="row">
+                        <div class="input-group col-md-12">
+                            <label for="label">Tanggal Awal</label>
+                            <input type="date" name="tgl_awal" id="tgl_awal" class="form-control"/>
+                        </div>
+                        <br><br><br>
+                        <div class="input-group col-md-12">
+                            <label for="label">Tanggal Akhir</label>
+                            <input type="date" name="tgl_akhir" id="tgl_akhir" class="form-control"/>
+                        </div>
+                        <br><br><br>
+                        <div class="input-group mb-2">
+                            <a href="#" target="_blank" class="btn btn-primary col-md-12">Cetak Laporan Pertanggal</a>  
+                        </div>
+                    </div> --}}
                     @if (session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
                         <div class="alert-body">
@@ -42,28 +41,22 @@
                             <th>No</th>
                             <th>No Agenda</th>
                             <th>No Surat</th>
+                            <th>Tanggal Surat</th>
+                            <th>Tanggal Terima</th>
                             <th>Pengirim</th>
                             <th>Perihal</th>
-                            <th>Tanggal Terima</th>
-                            <th>Action</th>
+                            <th>Keterangan</th>
                         </tr>
                             @foreach ($surat_masuk as $no => $data)
                             <tr>
                                 <td>{{ $surat_masuk->firstItem()+$no}}</td>
                                 <td>{{ $data->no_agenda}}</td>
                                 <td>{{ $data->no_surat}}</td>
+                                <td>{{ $data->tgl_surat}}</td>
+                                <td>{{ $data->tgl_terima}}</td>
                                 <td>{{ $data->sumber_surat}}</td>
                                 <td>{{ $data->perihal}}</td>
-                                <td>{{ $data->tgl_terima}}</td>
-                                <td>
-                                    <a href="{{ route('surat-masuk.e',$data->id)}}" class="badge badge-primary">Edit</a>
-                                    <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                                    <form action="{{ route('surat-masuk.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                    </form>
-                                        Delete</a>
-                                </td>
+                                <td>{{ $data->keterangan}}</td>
                             </tr>
                             @endforeach
                     </table>
@@ -72,6 +65,7 @@
                         <?php $surat_masuk = DB::table('surat_masuk')->count(); print_r($surat_masuk); ?>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

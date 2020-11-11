@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('operator/{id}', 'OperatorController@delete')->name('op.d');
     Route::get('operator/{id}/edit', 'OperatorController@edit')->name('op.e');
     Route::patch('operator/{id}', 'OperatorController@update')->name('op.u');
+    Route::get('operator/cari', 'OperatorController@cari')->name('op.c');
 
     //Daftar Arsip
     Route::get('arsip', 'ArsipController@index')->name('arsip');
@@ -55,6 +56,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('arsip/{id}/edit', 'ArsipController@edit')->name('arsip.e');
     Route::patch('arsip/{id}', 'ArsipController@update')->name('arsip.u');
     Route::get('arsip/cari', 'ArsipController@cari')->name('arsip.c');
+    Route::get('arsip/cetak', 'ArsipController@cetak')->name('arsip.ct');
+
 
     /*------------------ Stock Opname--------------------------*/
     //Stockopname Berkas
@@ -64,6 +67,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('op-berkas/{id}', 'OpnameberkasController@destroy')->name('op-berkas.d');
     Route::get('op-berkas/{id}/edit', 'OpnameberkasController@edit')->name('op-berkas.e');
     Route::patch('op-berkas/{id}', 'OpnameberkasController@update')->name('op-berkas.u');
+    Route::get('op-berkas/cari', 'OpnameberkasController@cari')->name('op-berkas.c');
+    Route::get('op-berkas/cetak', 'OpnameberkasController@cetak')->name('op-berkas.ct');
+
 
     //Stockopname Buku
     Route::get('op-buku', 'OpnamebukuController@index')->name('op-buku');
@@ -72,6 +78,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('op-buku/{id}', 'OpnamebukuController@destroy')->name('op-buku.d');
     Route::get('op-buku/{id}/edit', 'OpnamebukuController@edit')->name('op-buku.e');
     Route::patch('op-buku/{id}', 'OpnamebukuController@update')->name('op-buku.u');
+    Route::get('op-buku/cari', 'OpnamebukuController@cari')->name('op-buku.c');
+    Route::get('op-buku/cetak', 'OpnamebukuController@cetak')->name('op-buku.ct');
 
     //Surat Masuk
     Route::get('surat-masuk', 'SuratmasukController@index')->name('surat-masuk');
@@ -81,7 +89,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('surat-masuk//edit/{id}', 'SuratmasukController@edit')->name('surat-masuk.e');
     Route::patch('surat-masuk/{id}', 'SuratmasukController@update')->name('surat-masuk.u');
     Route::get('surat-masuk/cari', 'SuratmasukController@cari')->name('surat-masuk.c');
-    Route::get('surat-masuk-cetak', 'SuratmasukController@cetakForm')->name('surat-masuk.ck');
+    Route::get('surat-masuk/cetak', 'SuratmasukController@cetak')->name('surat-masuk.ct');
 
     //Surat Keluar
     Route::get('surat-keluar', 'SuratkeluarController@index')->name('surat-keluar');
@@ -91,6 +99,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('surat-keluar//edit/{id}', 'SuratkeluarController@edit')->name('surat-keluar.e');
     Route::patch('surat-keluar/{id}', 'SuratkeluarController@update')->name('surat-keluar.u');
     Route::get('surat-keluar/cari', 'SuratkeluarController@cari')->name('surat-keluar.c');
+    Route::get('surat-keluar/cetak', 'SuratkeluarController@cetak')->name('surat-keluar.ct');
 
     //Logout
     Route::get('logout', 'otentikasi\OtentikasiController@logout')->name('logout');

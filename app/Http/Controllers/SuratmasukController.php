@@ -19,6 +19,12 @@ class SuratmasukController extends Controller
         return view('surat_masuk.surat-masuk', ['surat_masuk' => $surat_masuk]);
     }
 
+    public function cetak()
+    {
+        $surat_masuk = DB::table('surat_masuk')->paginate(15);
+        return view('surat_masuk.surat-masuk-laporan', ['surat_masuk' => $surat_masuk]);
+    }
+
     // Cari Data
     public function cari(Request $request)
     {
@@ -138,10 +144,5 @@ class SuratmasukController extends Controller
         DB::table('surat_masuk')->where('id', $id)->delete();
 
         return redirect()->back()->with('message', 'Data berhasil dihapus');
-    }
-
-    public function cetakForm()
-    {
-        return view('surat_masuk.surat-masuk-cetak');
     }
 }

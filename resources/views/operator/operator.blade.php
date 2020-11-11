@@ -5,47 +5,57 @@
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
-            <a href="{{ route('op.t')}}" class="btn btn-icon icon-left btn-primary">
-                <i class="far fa-edit">Tambah Data</i>
-            </a>
-            <hr>
-            @if (session('message'))
-            <div class="alert alert-success alert-dismissible show fade">
-                <div class="alert-body">
-                  <button class="close" data-dismiss="alert">
-                    <span>×</span>
-                  </button>
-                  {{ session('message')}}
+            <div class="card">
+                <div class="card-header">
+                    <h4>Opname Berkas</h4>
                 </div>
-              </div>
-            @endif
-            <table class="table table-striped table-bordered table-sm">
-                <tr>
-                    <th>No</th>
-                    <th>ID Operator</th>
-                    <th>Nama Operator</th>
-                    <th>Lavel</th>
-                    <th>Action</th>
-                </tr>
-                    @foreach ($operator as $no => $data)
+                <div class="card-body">
+                    <div class="float-left">
+                        <a href="{{ route('op.t')}}" class="btn btn-icon icon-left btn-primary">
+                            <i class="far fa-edit">Tambah Data</i>
+                        </a>
+                    </div>
+                
+
+
+                @if (session('message'))
+                <div class="alert alert-success alert-dismissible show fade">
+                    <div class="alert-body">
+                    <button class="close" data-dismiss="alert">
+                        <span>×</span>
+                    </button>
+                    {{ session('message')}}
+                    </div>
+                </div>
+                @endif
+                <table class="table table-striped table-bordered table-sm">
                     <tr>
-                        <td>{{ $operator->firstItem()+$no}}</td>
-                        <td>{{ $data->id_op}}</td>
-                        <td>{{ $data->nm_op}}</td>
-                        <td>{{ $data->level}}</td>
-                        <td>
-                            <a href="{{ route('op.e',$data->id)}}" class="badge badge-primary">Edit</a>
-                            <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                            <form action="{{ route('op.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
-                                @csrf
-                                @method('delete')
-                            </form>
-                                Delete</a>
-                        </td>
+                        <th>No</th>
+                        <th>ID Operator</th>
+                        <th>Nama Operator</th>
+                        <th>Lavel</th>
+                        <th>Action</th>
                     </tr>
-                    @endforeach
-            </table>
-            {{$operator->links()}}
+                        @foreach ($operator as $no => $data)
+                        <tr>
+                            <td>{{ $operator->firstItem()+$no}}</td>
+                            <td>{{ $data->id_op}}</td>
+                            <td>{{ $data->nm_op}}</td>
+                            <td>{{ $data->level}}</td>
+                            <td>
+                                <a href="{{ route('op.e',$data->id)}}" class="badge badge-primary">Edit</a>
+                                <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
+                                <form action="{{ route('op.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                </form>
+                                    Delete</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                </table>
+                {{$operator->links()}}
+            </div>
         </div>
     </div>
 </div>

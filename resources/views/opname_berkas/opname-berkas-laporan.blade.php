@@ -7,10 +7,10 @@
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Opname Berkas</h4>
+                    <h4>Laporan Opname Berkas</h4>
                 </div>
                 <div class="card-body">
-                    <div class="float-left">
+                    {{-- <div class="float-left">
                         <a href="{{ route('op-berkas.t')}}" class="btn btn-icon icon-left btn-primary">
                             <i class="far fa-edit">Tambah Data</i>
                         </a>
@@ -24,10 +24,9 @@
                             </div>
                           </div>
                         </form>
-                    </div>
+                    </div> --}}
 
-                      <br><br><br>
-
+                    
                     @if (session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
                         <div class="alert-body">
@@ -46,7 +45,12 @@
                             <th>Tahun</th>
                             <th>Kategori Berkas</th>
                             <th>Uraian Berkas</th>
-                            <th>Action</th>
+                            <th>Jumlah Berkas</th>
+                            <th>Jumlah Boks</th>
+                            <th>No Boks</th>
+                            <th>lokasi</th>
+                            <th>Keterangan</th>
+                            
                         </tr>
                             @foreach ($opname_berkas as $no => $data)
                             <tr>
@@ -56,15 +60,12 @@
                                 <td>{{ $data->tahun}}</td>
                                 <td>{{ $data->kategori_berkas}}</td>
                                 <td>{{ $data->uraian_berkas}}</td>
-                                <td>
-                                    <a href="{{ route('op-berkas.e',$data->id)}}" class="badge badge-primary">Edit</a>
-                                    <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                                    <form action="{{ route('op-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                    </form>
-                                        Delete</a>
-                                </td>
+                                <td>{{ $data->jml_berkas}}</td>
+                                <td>{{ $data->jml_boks}}</td>
+                                <td>{{ $data->no_boks}}</td>
+                                <td>{{ $data->lokasi}}</td>
+                                <td>{{ $data->ket}}</td>
+                                
                             </tr>
                             @endforeach
                     </table>

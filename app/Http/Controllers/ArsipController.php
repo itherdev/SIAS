@@ -19,6 +19,12 @@ class ArsipController extends Controller
         return view('daftar-arsip.arsip', ['data_arsip' => $data_arsip]);
     }
 
+    public function cetak()
+    {
+        $data_arsip = DB::table('data_arsip')->paginate(15);
+        return view('daftar-arsip.arsip-laporan', ['data_arsip' => $data_arsip]);
+    }
+
     // Cari Data
     public function cari(Request $request)
     {

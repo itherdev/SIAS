@@ -16,8 +16,14 @@ class OpnamebukuController extends Controller
      */
     public function index()
     {
-        $opname_buku = DB::table('opname_buku')->paginate(3);
+        $opname_buku = DB::table('opname_buku')->paginate(5);
         return view('opname_buku.opname-buku', ['opname_buku' => $opname_buku]);
+    }
+
+    public function cetak()
+    {
+        $opname_buku = DB::table('opname_buku')->paginate(15);
+        return view('opname_buku.opname-buku-laporan', ['opname_buku' => $opname_buku]);
     }
 
     /**

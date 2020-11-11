@@ -34,11 +34,11 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-chart-bar"></i> <span>Laporan/Report</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="#">Daftar Arsip</a></li>
-              <li><a class="nav-link" href="#">Laporan Stock Opname Berkas</a></li>
-              <li><a class="nav-link" href="#">Laporan Stock Opname Buku</a></li>
-              <li class="{{ set_active('surat-masuk.ck') }}"><a class="nav-link" href="{{ route('surat-masuk.ck')}}">Laporan Surat Masuk</a></li>
-              <li><a class="nav-link" href="#">Laporan Surat Keluar</a></li>
+              <li class="{{ set_active('arsip.ct') }}"><a class="nav-link" href="{{ route('arsip.ct')}}">Daftar Arsip</a></li>
+              <li class="{{ set_active('op-berkas.ct') }}"><a class="nav-link" href="{{ route('op-berkas.ct')}}">Laporan Stock Opname Berkas</a></li>
+              <li class="{{ set_active('op-buku.ct') }}"><a class="nav-link" href="{{ route('op-buku.ct')}}">Laporan Stock Opname Buku</a></li>
+              <li class="{{ set_active('surat-masuk.ct') }}"><a class="nav-link" href="{{ route('surat-masuk.ct')}}">Laporan Surat Masuk</a></li>
+              <li class="{{ set_active('surat-keluar.ct') }}"><a class="nav-link" href="{{ route('surat-keluar.ct')}}">Laporan Surat Keluar</a></li>
             </ul>
           </li>
         </ul>

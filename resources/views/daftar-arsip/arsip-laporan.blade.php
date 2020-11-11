@@ -1,22 +1,21 @@
 @extends('layouts.master')
 
-@section('title', 'Stock Opname Berkas')
+@section('title', 'Daftar Arsip')
 @section('content')
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
-                <div class="card-header">
-                    <h4>Opname Berkas</h4>
-                </div>
                 <div class="card-body">
-                    <div class="float-left">
-                        <a href="{{ route('op-berkas.t')}}" class="btn btn-icon icon-left btn-primary">
+                    <h4>Laporan Data Arsip </h4>
+                    <hr>
+                    {{-- <div class="float-left">
+                        <a href="{{ route('arsip.t')}}" class="btn btn-icon icon-left btn-primary">
                             <i class="far fa-edit">Tambah Data</i>
                         </a>
                     </div>
                     <div class="float-right">
-                        <form action="{{ route('op-berkas.c')}}" class="form-inline" method="GET">
+                        <form action="{{ route('arsip.c')}}" class="form-inline" method="GET">
                           <div class="input-group">
                             <input type="text" class="form-control" name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search">
                             <div class="input-group-append">
@@ -24,9 +23,12 @@
                             </div>
                           </div>
                         </form>
-                    </div>
-
-                      <br><br><br>
+                      </div> --}}
+                        {{-- Cari Data --}}
+                        {{-- <form action="{{ route('arsip.c')}}" class="form-inline my-2 my-lg-0" method="GET">
+                                <input class="form-control mr-sm-2" type="search"  name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search" data-width="250">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                        </form> --}}
 
                     @if (session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
@@ -38,39 +40,29 @@
                         </div>
                       </div>
                     @endif
-                    <table class="table table-striped table-bordered table-sm">
+                    <table class="table table-striped table-bordered table-hover table-sm">
                         <tr>
                             <th>No</th>
                             <th>Kode Klarifikasi</th>
-                            <th>No Berkas</th>
+                            <th>No Register</th>
                             <th>Tahun</th>
-                            <th>Kategori Berkas</th>
-                            <th>Uraian Berkas</th>
-                            <th>Action</th>
+                            <th>Jenis Arsip</th>
+                           
                         </tr>
-                            @foreach ($opname_berkas as $no => $data)
+                            @foreach ($data_arsip as $no => $data)
                             <tr>
-                                <td>{{ $opname_berkas->firstItem()+$no}}</td>
+                                <td>{{ $data_arsip->firstItem()+$no}}</td>
                                 <td>{{ $data->kode_klarifikasi}}</td>
-                                <td>{{ $data->no_berkas}}</td>
+                                <td>{{ $data->no_register}}</td>
                                 <td>{{ $data->tahun}}</td>
-                                <td>{{ $data->kategori_berkas}}</td>
-                                <td>{{ $data->uraian_berkas}}</td>
-                                <td>
-                                    <a href="{{ route('op-berkas.e',$data->id)}}" class="badge badge-primary">Edit</a>
-                                    <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                                    <form action="{{ route('op-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                    </form>
-                                        Delete</a>
-                                </td>
+                                <td>{{ $data->jenis_arsip}}</td>
+                                
                             </tr>
                             @endforeach
                     </table>
-                    {{$opname_berkas->links()}}
+                    {{$data_arsip->links()}}
                     <div> Jumlah Data 
-                        <?php $opname_berkas = DB::table('opname_berkas')->count(); print_r($opname_berkas); ?>
+                        <?php $data_arsip = DB::table('data_arsip')->count(); print_r($data_arsip); ?>
                     </div>
                 </div>
             </div>

@@ -19,6 +19,13 @@ class SuratkeluarController extends Controller
         return view('surat_keluar.surat-keluar', ['surat_keluar' => $surat_keluar]);
     }
 
+    public function cetak()
+    {
+        $surat_keluar = DB::table('surat_keluar')->paginate(15);
+        return view('surat_keluar.surat-keluar-laporan', ['surat_keluar' => $surat_keluar]);
+    }
+
+
     // Cari Data
     public function cari(Request $request)
     {

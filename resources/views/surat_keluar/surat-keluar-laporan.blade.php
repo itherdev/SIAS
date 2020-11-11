@@ -1,33 +1,32 @@
 @extends('layouts.master')
 
-@section('title', 'Stock Opname Berkas')
+@section('title', 'Surat Keluar')
 @section('content')
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Opname Berkas</h4>
-                </div>
+                    <h4>Laporan Surat Keluar</h4>
+                  </div>
                 <div class="card-body">
                     <div class="float-left">
-                        <a href="{{ route('op-berkas.t')}}" class="btn btn-icon icon-left btn-primary">
+                        {{-- <a href="{{ route('surat-keluar.t')}}" class="btn btn-icon icon-left btn-primary">
                             <i class="far fa-edit">Tambah Data</i>
-                        </a>
+                        </a> --}}
                     </div>
                     <div class="float-right">
-                        <form action="{{ route('op-berkas.c')}}" class="form-inline" method="GET">
+                        {{-- <form action="{{ route('surat-keluar.c')}}" class="form-inline" method="GET">
                           <div class="input-group">
                             <input type="text" class="form-control" name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search">
                             <div class="input-group-append">
                               <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                             </div>
                           </div>
-                        </form>
-                    </div>
+                        </form> --}}
+                      </div>
 
-                      <br><br><br>
-
+                      
                     @if (session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
                         <div class="alert-body">
@@ -38,39 +37,33 @@
                         </div>
                       </div>
                     @endif
-                    <table class="table table-striped table-bordered table-sm">
+                    <table class="table table-striped table-bordered table-hover table-sm">
                         <tr>
                             <th>No</th>
-                            <th>Kode Klarifikasi</th>
-                            <th>No Berkas</th>
-                            <th>Tahun</th>
-                            <th>Kategori Berkas</th>
-                            <th>Uraian Berkas</th>
-                            <th>Action</th>
+                            <th>No Surat</th>
+                            <th>Tanggal Surat</th>
+                            <th>Tujuan Surat</th>
+                            <th>Perihal</th>
+                            <th>Keterangan</th>
+
                         </tr>
-                            @foreach ($opname_berkas as $no => $data)
+                            @foreach ($surat_keluar as $no => $data)
                             <tr>
-                                <td>{{ $opname_berkas->firstItem()+$no}}</td>
-                                <td>{{ $data->kode_klarifikasi}}</td>
-                                <td>{{ $data->no_berkas}}</td>
-                                <td>{{ $data->tahun}}</td>
-                                <td>{{ $data->kategori_berkas}}</td>
-                                <td>{{ $data->uraian_berkas}}</td>
-                                <td>
-                                    <a href="{{ route('op-berkas.e',$data->id)}}" class="badge badge-primary">Edit</a>
-                                    <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                                    <form action="{{ route('op-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                    </form>
-                                        Delete</a>
-                                </td>
+                                <td>{{ $surat_keluar->firstItem()+$no}}</td>
+                              
+                                <td>{{ $data->no_surat}}</td>
+                                <td>{{ $data->tgl_surat}}</td>
+                                <td>{{ $data->tujuan_surat}}</td>
+                                <td>{{ $data->perihal}}</td>
+                                <td>{{ $data->keterangan}}</td>
+                                
+                                
                             </tr>
                             @endforeach
                     </table>
-                    {{$opname_berkas->links()}}
+                    {{$surat_keluar->links()}}
                     <div> Jumlah Data 
-                        <?php $opname_berkas = DB::table('opname_berkas')->count(); print_r($opname_berkas); ?>
+                        <?php $surat_keluar = DB::table('surat_keluar')->count(); print_r($surat_keluar); ?>
                     </div>
                 </div>
             </div>
