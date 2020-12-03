@@ -18,7 +18,7 @@ class OpnameberkasController extends Controller
      */
     public function index()
     {
-        $opname_berkas = DB::table('opname_berkas')->paginate(5);
+        $opname_berkas = DB::table('opname_berkas')->paginate(10);
         return view('opname_berkas.opname-berkas', ['opname_berkas' => $opname_berkas]);
     }
 

@@ -70,7 +70,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('op-berkas/cari', 'OpnameberkasController@cari')->name('op-berkas.c');
     Route::get('op-berkas/cetak', 'OpnameberkasController@cetak')->name('op-berkas.ct');
 
-
     //Stockopname Buku
     Route::get('op-buku', 'OpnamebukuController@index')->name('op-buku');
     Route::get('op-buku/tambah', 'OpnamebukuController@create')->name('op-buku.t');
@@ -81,6 +80,51 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('op-buku/cari', 'OpnamebukuController@cari')->name('op-buku.c');
     Route::get('op-buku/cetak', 'OpnamebukuController@cetak')->name('op-buku.ct');
 
+
+    /*------------------ Peminjaman Arsip--------------------------*/
+    //Peminjaman Berkas
+    Route::get('peminjaman-berkas', 'PeminjamanberkasController@index')->name('peminjaman-berkas');
+    Route::get('peminjaman-berkas/tambah', 'PeminjamanberkasController@create')->name('peminjaman-berkas.t');
+    Route::post('peminjaman-berkas', 'PeminjamanberkasController@store')->name('peminjaman-berkas.s');
+    Route::delete('peminjaman-berkas/{id}', 'PeminjamanberkasController@destroy')->name('peminjaman-berkas.d');
+    Route::get('peminjaman-berkas/{id}/edit', 'PeminjamanberkasController@edit')->name('peminjaman-berkas.e');
+    Route::patch('peminjaman-berkas/{id}', 'PeminjamanberkasController@update')->name('peminjaman-berkas.u');
+    Route::get('peminjaman-berkas/cari', 'PeminjamanberkasController@cari')->name('peminjaman-berkas.c');
+    Route::get('peminjaman-berkas/cetak', 'PeminjamanberkasController@cetak')->name('peminjaman-berkas.ct');
+
+    //Peminjaman Buku
+    Route::get('peminjaman-buku', 'PeminjamanbukuController@index')->name('peminjaman-buku');
+    Route::get('peminjaman-buku/tambah', 'PeminjamanbukuController@create')->name('peminjaman-buku.t');
+    Route::post('peminjaman-buku', 'PeminjamanbukuController@store')->name('peminjaman-buku.s');
+    Route::delete('peminjaman-buku/{id}', 'PeminjamanbukuController@destroy')->name('peminjaman-buku.d');
+    Route::get('peminjaman-buku/{id}/edit', 'PeminjamanbukuController@edit')->name('peminjaman-buku.e');
+    Route::patch('peminjaman-buku/{id}', 'PeminjamanbukuController@update')->name('peminjaman-buku.u');
+    Route::get('peminjaman-buku/cari', 'PeminjamanbukuController@cari')->name('peminjaman-buku.c');
+    Route::get('peminjaman-buku/cetak', 'PeminjamanbukuController@cetak')->name('peminjaman-buku.ct');
+
+
+    /*------------------ Pengembalian Arsip--------------------------*/
+    //pengembalian Berkas
+    Route::get('pengembalian-berkas', 'PengembalianberkasController@index')->name('pengembalian-berkas');
+    Route::get('pengembalian-berkas/tambah', 'PengembalianberkasController@create')->name('pengembalian-berkas.t');
+    Route::post('pengembalian-berkas', 'PengembalianberkasController@store')->name('pengembalian-berkas.s');
+    Route::delete('pengembalian-berkas/{id}', 'PengembalianberkasController@destroy')->name('pengembalian-berkas.d');
+    Route::get('pengembalian-berkas/{id}/edit', 'PengembalianberkasController@edit')->name('pengembalian-berkas.e');
+    Route::patch('pengembalian-berkas/{id}', 'PengembalianberkasController@update')->name('pengembalian-berkas.u');
+    Route::get('pengembalian-berkas/cari', 'PengembalianberkasController@cari')->name('pengembalian-berkas.c');
+    Route::get('pengembalian-berkas/cetak', 'PengembalianberkasController@cetak')->name('pengembalian-berkas.ct');
+
+    //pengembalian Buku
+    Route::get('pengembalian-buku', 'PengembalianbukuController@index')->name('pengembalian-buku');
+    Route::get('pengembalian-buku/tambah', 'PengembalianbukuController@create')->name('pengembalian-buku.t');
+    Route::post('pengembalian-buku', 'PengembalianbukuController@store')->name('pengembalian-buku.s');
+    Route::delete('pengembalian-buku/{id}', 'PengembalianbukuController@destroy')->name('pengembalian-buku.d');
+    Route::get('pengembalian-buku/{id}/edit', 'PengembalianbukuController@edit')->name('pengembalian-buku.e');
+    Route::patch('pengembalian-buku/{id}', 'PengembalianbukuController@update')->name('pengembalian-buku.u');
+    Route::get('pengembalian-buku/cari', 'PengembalianbukuController@cari')->name('pengembalian-buku.c');
+    Route::get('pengembalian-buku/cetak', 'PengembalianbukuController@cetak')->name('pengembalian-buku.ct');
+
+    /////////////////////////////////////////////////////////////////////////////
     //Surat Masuk
     Route::get('surat-masuk', 'SuratmasukController@index')->name('surat-masuk');
     Route::get('surat-masuk/tambah', 'SuratmasukController@create')->name('surat-masuk.t');

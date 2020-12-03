@@ -12,12 +12,12 @@
             <a href="{{ route('login')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
           </li>
           <li class="menu-header">Starter</li>
-          <li class="{{set_active('surat-masuk')}}">
+          {{-- <li class="{{set_active('surat-masuk')}}">
             <a href="{{ route('surat-masuk')}}" class="nav-link"><i class="fas fa-inbox"></i></i><span>Surat Masuk</span></a>
           </li>
           <li class="{{set_active('surat-keluar')}}">
             <a href="{{ route('surat-keluar')}}" class="nav-link"><i class="fas fa-paper-plane"></i><span>Surat Keluar</span></a>
-          </li>
+          </li> --}}
           <li class="{{ set_active('arsip') }}">
             <a href="{{ route('arsip')}}" class="nav-link"><i class="fas fa-archive"></i><span>Daftar Arsip</span></a>
           </li>
@@ -26,6 +26,20 @@
             <ul class="dropdown-menu">
               <li class="{{ set_active(['op-berkas', 'op-berkas/tambah', 'op-berkas/edit/$1']) }}"><a class="nav-link" href="{{ route('op-berkas')}}">Stock Opname Berkas</a></li>
               <li class="{{ set_active('op-buku') }}"><a class="nav-link" href="{{ route('op-buku')}}">Stock Opname Buku</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown {{ set_active(['peminjaman-berkas', 'peminjaman-buku'])}}">
+            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cubes"></i> <span>Peminjaman Arsip</span></a>
+            <ul class="dropdown-menu">
+              <li class="{{ set_active(['peminjaman-berkas', 'peminjaman-berkas/tambah', 'peminjaman-berkas/edit/$1']) }}"><a class="nav-link" href="{{ route('peminjaman-berkas')}}">Peminjaman Arsip Berkas</a></li>
+              <li class="{{ set_active(['peminjaman-buku' , 'peminjaman-buku/tambah', 'peminjaman-buku/edit/$1']) }}"><a class="nav-link" href="#">Peminjaman Arsip Buku</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown {{ set_active(['pengembalian-berkas', 'pengembalian-buku'])}}">
+            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cubes"></i> <span>Pengembalian Arsip</span></a>
+            <ul class="dropdown-menu">
+              <li class="{{ set_active(['pengembalian-berkas', 'pengembalian-berkas/tambah', 'pengembalian-berkas/edit/$1']) }}"><a class="nav-link" href="#">Pengembalian Arsip Berkas</a></li>
+              <li class="{{ set_active(['pengembalian-buku' , 'pengembalian-buku/tambah', 'pengembalian-buku/edit/$1']) }}"><a class="nav-link" href="#">Pengembalian Arsip Buku</a></li>
             </ul>
           </li>
           <li class="{{ set_active('operator') }}">
