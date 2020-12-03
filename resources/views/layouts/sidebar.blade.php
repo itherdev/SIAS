@@ -32,7 +32,7 @@
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cubes"></i> <span>Peminjaman Arsip</span></a>
             <ul class="dropdown-menu">
               <li class="{{ set_active(['peminjaman-berkas', 'peminjaman-berkas/tambah', 'peminjaman-berkas/edit/$1']) }}"><a class="nav-link" href="{{ route('peminjaman-berkas')}}">Peminjaman Arsip Berkas</a></li>
-              <li class="{{ set_active(['peminjaman-buku' , 'peminjaman-buku/tambah', 'peminjaman-buku/edit/$1']) }}"><a class="nav-link" href="#">Peminjaman Arsip Buku</a></li>
+              <li class="{{ set_active(['peminjaman-buku' , 'peminjaman-buku/tambah', 'peminjaman-buku/edit/$1']) }}"><a class="nav-link" href="{{ route('peminjaman-buku')}}">Peminjaman Arsip Buku</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown {{ set_active(['pengembalian-berkas', 'pengembalian-buku'])}}">
