@@ -65,7 +65,7 @@
             </table>
             {{$opname_buku->links()}}
             <div> Jumlah Data 
-                <?php $opname_berkas = DB::table('opname_berkas')->count(); print_r($opname_berkas); ?>
+                <?php $opname_buku = DB::table('opname_buku')->count(); print_r($opname_buku); ?>
             </div>
                 </div>
             </div>

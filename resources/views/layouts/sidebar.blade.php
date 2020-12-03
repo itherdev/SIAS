@@ -39,7 +39,7 @@
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cubes"></i> <span>Pengembalian Arsip</span></a>
             <ul class="dropdown-menu">
               <li class="{{ set_active(['pengembalian-berkas', 'pengembalian-berkas/tambah', 'pengembalian-berkas/edit/$1']) }}"><a class="nav-link" href="{{ route('pengembalian-berkas')}}">Pengembalian Arsip Berkas</a></li>
-              <li class="{{ set_active(['pengembalian-buku' , 'pengembalian-buku/tambah', 'pengembalian-buku/edit/$1']) }}"><a class="nav-link" href="#">Pengembalian Arsip Buku</a></li>
+              <li class="{{ set_active(['pengembalian-buku' , 'pengembalian-buku/tambah', 'pengembalian-buku/edit/$1']) }}"><a class="nav-link" href="{{ route('pengembalian-buku')}}">Pengembalian Arsip Buku</a></li>
             </ul>
           </li>
           <li class="{{ set_active('operator') }}">
@@ -51,8 +51,11 @@
               <li class="{{ set_active('arsip.ct') }}"><a class="nav-link" href="{{ route('arsip.ct')}}">Daftar Arsip</a></li>
               <li class="{{ set_active('op-berkas.ct') }}"><a class="nav-link" href="{{ route('op-berkas.ct')}}">Laporan Stock Opname Berkas</a></li>
               <li class="{{ set_active('op-buku.ct') }}"><a class="nav-link" href="{{ route('op-buku.ct')}}">Laporan Stock Opname Buku</a></li>
-              <li class="{{ set_active('surat-masuk.ct') }}"><a class="nav-link" href="{{ route('surat-masuk.ct')}}">Laporan Surat Masuk</a></li>
-              <li class="{{ set_active('surat-keluar.ct') }}"><a class="nav-link" href="{{ route('surat-keluar.ct')}}">Laporan Surat Keluar</a></li>
+              <li class="{{ set_active('peminjaman-berkas.ct') }}"><a class="nav-link" href="{{ route('peminjaman-berkas.ct')}}">Laporan Peminjaman Berkas</a></li>
+              <li class="{{ set_active('peminjaman-buku.ct') }}"><a class="nav-link" href="{{ route('peminjaman-buku.ct')}}">Laporan Peminjaman Buku</a></li>
+              <li class="{{ set_active('pengembalian-berkas.ct') }}"><a class="nav-link" href="{{ route('pengembalian-berkas.ct')}}">Laporan Pengembalian Berkas</a></li>
+              <li class="{{ set_active('pengembalian-buku.ct') }}"><a class="nav-link" href="{{ route('pengembalian-buku.ct')}}">Laporan Pengembalian Buku</a></li>
+
             </ul>
           </li>
         </ul>

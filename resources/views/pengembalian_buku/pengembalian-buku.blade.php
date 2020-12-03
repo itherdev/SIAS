@@ -1,22 +1,22 @@
 @extends('layouts.master')
 
-@section('title', 'Stock Peminjaman Berkas')
+@section('title', 'Pengembalian Buku')
 @section('content')
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Laporan Peminjaman Berkas</h4>
+                    <h4>Pengembalian Buku</h4>
                 </div>
                 <div class="card-body">
-                    {{-- <div class="float-left">
-                        <a href="{{ route('op-berkas.t')}}" class="btn btn-icon icon-left btn-primary">
+                    <div class="float-left">
+                        <a href="{{ route('pengembalian-buku.t')}}" class="btn btn-icon icon-left btn-primary">
                             <i class="far fa-edit">Tambah Data</i>
                         </a>
                     </div>
                     <div class="float-right">
-                        <form action="{{ route('op-berkas.c')}}" class="form-inline" method="GET">
+                        <form action="{{ route('pengembalian-buku.c')}}" class="form-inline" method="GET">
                           <div class="input-group">
                             <input type="text" class="form-control" name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search">
                             <div class="input-group-append">
@@ -24,9 +24,10 @@
                             </div>
                           </div>
                         </form>
-                    </div> --}}
+                    </div>
 
-                    
+                      <br><br><br>
+
                     @if (session('message'))
                     <div class="alert alert-success alert-dismissible show fade">
                         <div class="alert-body">
@@ -39,38 +40,41 @@
                     @endif
                     <table class="table table-striped table-bordered table-sm">
                         <tr>
-                          <th>No</th>
-                          <th>No Berkas</th>
-                          <th>Tgl Pinjam</th>
-                          <th>Uraian Berkas</th>
-                          <th>Tahun</th>
-                          <th>Jumlah Berkas</th>
-                          <th>Nama Peminjam</th>
-                          <th>Unit Pengolah</th>
-                          <th>Nama Petugas</th>
-                          <th>Kategori Petugas</th>
-                          <th>Status</th>
+                            <th>No</th>
+                            <th>No buku</th>
+                            <th>No Register</th>
+                            <th>Tgl Kembali</th>
+                            <th>Nama Peminjam</th>
+                            <th>Uraian</th>
+                            <th>Jumlah berkas</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
-                            @foreach ($peminjaman_berkas as $no => $data)
+                            @foreach ($pengembalian_buku as $no => $data)
                             <tr>
-                                <td>{{ $peminjaman_berkas->firstItem()+$no}}</td>
-                                <td>{{ $data->no_berkas}}</td>
-                                <td>{{ $data->tgl_pinjam}}</td>
-                                <td>{{ $data->uraian_berkas}}</td>
-                                <td>{{ $data->tahun}}</td>
-                                <td>{{ $data->jml_berkas}}</td>
+                                <td>{{ $pengembalian_buku->firstItem()+$no}}</td>
+                                <td>{{ $data->no_buku}}</td>
+                                <td>{{ $data->no_register}}</td>
+                                <td>{{ $data->tgl_kembali}}</td>
                                 <td>{{ $data->nama_peminjam}}</td>
-                                <td>{{ $data->unit_pengolah}}</td>
-                                <td>{{ $data->nama_petugas}}</td>
-                                <td>{{ $data->kategori_petugas}}</td>
+                                <td>{{ $data->uraian}}</td>
+                                <td>{{ $data->jml_berkas}}</td>
                                 <td>{{ $data->status}}</td>
-                                
+                                <td>
+                                    <a href="{{ route('pengembalian-buku.e',$data->id)}}" class="badge badge-primary">Edit</a>
+                                    <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
+                                    <form action="{{ route('pengembalian-buku.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                    </form>
+                                        Delete</a>
+                                </td>
                             </tr>
                             @endforeach
                     </table>
-                    {{$peminjaman_berkas->links()}}
+                    {{$pengembalian_buku->links()}}
                     <div> Jumlah Data 
-                        <?php $peminjaman_berkas = DB::table('peminjaman_berkas')->count(); print_r($peminjaman_berkas); ?>
+                        <?php $pengembalian_buku = DB::table('pengembalian_buku')->count(); print_r($pengembalian_buku); ?>
                     </div>
                 </div>
             </div>

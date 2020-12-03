@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section('title', 'Stock Peminjaman Berkas')
+@section('title', 'Stock Opname Berkas')
 @section('content')
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Laporan Peminjaman Berkas</h4>
+                    <h4>Laporan Opname Berkas</h4>
                 </div>
                 <div class="card-body">
                     {{-- <div class="float-left">
@@ -39,38 +39,39 @@
                     @endif
                     <table class="table table-striped table-bordered table-sm">
                         <tr>
-                          <th>No</th>
-                          <th>No Berkas</th>
-                          <th>Tgl Pinjam</th>
-                          <th>Uraian Berkas</th>
-                          <th>Tahun</th>
-                          <th>Jumlah Berkas</th>
-                          <th>Nama Peminjam</th>
-                          <th>Unit Pengolah</th>
-                          <th>Nama Petugas</th>
-                          <th>Kategori Petugas</th>
-                          <th>Status</th>
+                            <th>No</th>
+                            <th>Kode Klarifikasi</th>
+                            <th>No Berkas</th>
+                            <th>Tahun</th>
+                            <th>Kategori Berkas</th>
+                            <th>Uraian Berkas</th>
+                            <th>Jumlah Berkas</th>
+                            <th>Jumlah Boks</th>
+                            <th>No Boks</th>
+                            <th>lokasi</th>
+                            <th>Keterangan</th>
+                            
                         </tr>
-                            @foreach ($peminjaman_berkas as $no => $data)
+                            @foreach ($opname_berkas as $no => $data)
                             <tr>
-                                <td>{{ $peminjaman_berkas->firstItem()+$no}}</td>
+                                <td>{{ $opname_berkas->firstItem()+$no}}</td>
+                                <td>{{ $data->kode_klarifikasi}}</td>
                                 <td>{{ $data->no_berkas}}</td>
-                                <td>{{ $data->tgl_pinjam}}</td>
-                                <td>{{ $data->uraian_berkas}}</td>
                                 <td>{{ $data->tahun}}</td>
+                                <td>{{ $data->kategori_berkas}}</td>
+                                <td>{{ $data->uraian_berkas}}</td>
                                 <td>{{ $data->jml_berkas}}</td>
-                                <td>{{ $data->nama_peminjam}}</td>
-                                <td>{{ $data->unit_pengolah}}</td>
-                                <td>{{ $data->nama_petugas}}</td>
-                                <td>{{ $data->kategori_petugas}}</td>
-                                <td>{{ $data->status}}</td>
+                                <td>{{ $data->jml_boks}}</td>
+                                <td>{{ $data->no_boks}}</td>
+                                <td>{{ $data->lokasi}}</td>
+                                <td>{{ $data->ket}}</td>
                                 
                             </tr>
                             @endforeach
                     </table>
-                    {{$peminjaman_berkas->links()}}
+                    {{$opname_berkas->links()}}
                     <div> Jumlah Data 
-                        <?php $peminjaman_berkas = DB::table('peminjaman_berkas')->count(); print_r($peminjaman_berkas); ?>
+                        <?php $opname_berkas = DB::table('opname_berkas')->count(); print_r($opname_berkas); ?>
                     </div>
                 </div>
             </div>
