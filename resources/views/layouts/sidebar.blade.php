@@ -1,10 +1,10 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <a href="index.html">SIAS DISDUKCAPIL</a>
+        <a href="#">SIAS DISDUKCAPIL</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">SIAS</a>
+        <a href="#">SIAS</a>
       </div>
         <ul class="sidebar-menu">
           <li class="menu-header">Dashboard</li>
@@ -38,7 +38,7 @@
           <li class="nav-item dropdown {{ set_active(['pengembalian-berkas', 'pengembalian-buku'])}}">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cubes"></i> <span>Pengembalian Arsip</span></a>
             <ul class="dropdown-menu">
-              <li class="{{ set_active(['pengembalian-berkas', 'pengembalian-berkas/tambah', 'pengembalian-berkas/edit/$1']) }}"><a class="nav-link" href="#">Pengembalian Arsip Berkas</a></li>
+              <li class="{{ set_active(['pengembalian-berkas', 'pengembalian-berkas/tambah', 'pengembalian-berkas/edit/$1']) }}"><a class="nav-link" href="{{ route('pengembalian-berkas')}}">Pengembalian Arsip Berkas</a></li>
               <li class="{{ set_active(['pengembalian-buku' , 'pengembalian-buku/tambah', 'pengembalian-buku/edit/$1']) }}"><a class="nav-link" href="#">Pengembalian Arsip Buku</a></li>
             </ul>
           </li>
