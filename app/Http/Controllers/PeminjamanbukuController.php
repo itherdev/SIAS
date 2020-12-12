@@ -32,11 +32,11 @@ class PeminjamanbukuController extends Controller
 
         // mengambil data dari table pegawai sesuai pencarian data
         $peminjaman_buku = DB::table('peminjaman_buku')
-            ->where('tgl_pinjam', 'no_buku', 'status', 'like', "%" . $cari . "%")
+            ->where('no_buku', 'like', "%" . $cari . "%")
             ->paginate();
 
         // mengirim data pegawai ke view index
-        return view('peminjaman_buku.arsip', ['peminjaman_buku' => $peminjaman_buku]);
+        return view('peminjaman_buku.peminjaman-buku', ['peminjaman_buku' => $peminjaman_buku]);
     }
 
 

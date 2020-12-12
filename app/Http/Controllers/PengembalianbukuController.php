@@ -32,11 +32,11 @@ class PengembalianbukuController extends Controller
 
         // mengambil data dari table pegawai sesuai pencarian data
         $pengembalian_buku = DB::table('pengembalian_buku')
-            ->where('tgl_kembali', 'no_buku', 'status', 'like', "%" . $cari . "%")
+            ->where('no_buku', 'like', "%" . $cari . "%")
             ->paginate();
 
         // mengirim data pegawai ke view index
-        return view('pengembalian_buku.arsip', ['pengembalian_buku' => $pengembalian_buku]);
+        return view('pengembalian_buku.pengembalian-buku', ['pengembalian_buku' => $pengembalian_buku]);
     }
 
 

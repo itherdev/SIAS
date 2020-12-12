@@ -37,6 +37,14 @@
                         </div>
                       </div>
                     @endif
+
+                    <div class="float-right">
+                      <a href="{{ route('op-berkas.p')}}" target="_blank" class="btn btn-icon icon-left btn-primary">
+                        <i class="fas fa-print"> Cetak Data</i>
+                        </a>
+                    </div>
+                    <br> <br> 
+
                     <table class="table table-striped table-bordered table-sm">
                         <tr>
                             <th>No</th>

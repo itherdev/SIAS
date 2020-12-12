@@ -19,7 +19,7 @@ class CreateOpnameBukuTable extends Migration
             $table->string('no_buku', 10);
             $table->string('no_register', 10);
             $table->year('tahun');
-            $table->string('kategori_buku');
+            $table->enum('kategori_buku', ['Umum', 'Terlambai I', 'Terlambar  II', 'Istimewa', 'Pemutihan', 'IN', 'China']);
             $table->string('lokasi');
             $table->string('ket');
             $table->string('tingkat_perkembangan');

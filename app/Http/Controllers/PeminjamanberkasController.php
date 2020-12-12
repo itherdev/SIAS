@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+
 class PeminjamanberkasController extends Controller
 {
     /**
@@ -24,6 +25,16 @@ class PeminjamanberkasController extends Controller
         return view('peminjaman_berkas.peminjaman-berkas-laporan', ['peminjaman_berkas' => $peminjaman_berkas]);
     }
 
+    // //Print 
+    // public function print()
+    // {
+    //     $peminjaman_berkas = DB::table('peminjaman_berkas')
+
+    //     $pdf = PDF::loadview('peminjaman_berkas.peminjaman-berkas-laporan', ['peminjaman_berkas' => $peminjaman_berkas]);
+    //     return $pdf->download('laporan-pegawai-pdf');
+    // }
+
+
     // Cari Data
     public function cari(Request $request)
     {
@@ -32,11 +43,11 @@ class PeminjamanberkasController extends Controller
 
         // mengambil data dari table pegawai sesuai pencarian data
         $peminjaman_berkas = DB::table('peminjaman_berkas')
-            ->where('tgl_pinjam', 'no_berkas', 'status', 'like', "%" . $cari . "%")
+            ->where('no_berkas', 'like', "%" . $cari . "%")
             ->paginate();
 
         // mengirim data pegawai ke view index
-        return view('peminjaman_berkas.arsip', ['peminjaman_berkas' => $peminjaman_berkas]);
+        return view('peminjaman_berkas.peminjaman-berkas', ['peminjaman_berkas' => $peminjaman_berkas]);
     }
 
 

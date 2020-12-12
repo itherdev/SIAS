@@ -35,8 +35,16 @@
                           </button>
                           {{ session('message')}}
                         </div>
-                      </div>
+                    </div>
                     @endif
+
+                    <div class="float-right">
+                      <a href="{{ route('peminjaman-berkas.p')}}" target="_blank" class="btn btn-icon icon-left btn-primary">
+                        <i class="fas fa-print"> Cetak Data</i>
+                      </a>
+                  </div>
+                  <br> <br> 
+
                     <table class="table table-striped table-bordered table-sm">
                         <tr>
                           <th>No</th>
@@ -72,6 +80,8 @@
                     <div> Jumlah Data 
                         <?php $peminjaman_berkas = DB::table('peminjaman_berkas')->count(); print_r($peminjaman_berkas); ?>
                     </div>
+
+                    
                 </div>
             </div>
         </div>

@@ -32,11 +32,11 @@ class PengembalianberkasController extends Controller
 
         // mengambil data dari table pegawai sesuai pencarian data
         $pengembalian_berkas = DB::table('pengembalian_berkas')
-            ->where('tgl_pinjam', 'no_berkas', 'status', 'like', "%" . $cari . "%")
+            ->where('no_berkas', "%" . $cari . "%")
             ->paginate();
 
         // mengirim data pegawai ke view index
-        return view('pengembalian_berkas.arsip', ['pengembalian_berkas' => $pengembalian_berkas]);
+        return view('pengembalian_berkas.pengembalian-berkas', ['pengembalian_berkas' => $pengembalian_berkas]);
     }
 
 

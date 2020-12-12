@@ -65,10 +65,25 @@ class ArsipController extends Controller
                 'kode_klarifikasi' => $request->kode_klarifikasi,
                 'no_register' => $request->no_register,
                 'tahun' => $request->tahun,
-                'jenis_arsip' => $request->jenis_arsip
+                'jenis_arsip' => $request->jenis_arsip,
+                'nik' => $request->nik,
+                'nama' => $request->nama,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'tempat' => $request->tempat,
+                'tgl_lahir' => $request->tgl_lahir,
+                'alamat' => $request->alamat,
+                'nama_ortu' => $request->nama_ortu,
+                'nik_ortu' => $request->nik_ortu,
+                'lokasi' => $request->lokasi,
+                'ket' => $request->ket,
+                'status' => $request->status,
+                'lampiran' => $request->lampiran
             ],
 
         ]);
+
+        // $lampiran = $request->lampiran;
+        // $new_lampiran = time() . $lampiran->getClientOriginalName();
 
         return redirect()->route('arsip')->with('message', 'Data berhasil disimpan');
     }
@@ -121,7 +136,19 @@ class ArsipController extends Controller
             'kode_klarifikasi' => $request->kode_klarifikasi,
             'no_register' => $request->no_register,
             'tahun' => $request->tahun,
-            'jenis_arsip' => $request->jenis_arsip
+            'jenis_arsip' => $request->jenis_arsip,
+            'nik' => $request->nik,
+            'nama' => $request->nama,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tempat' => $request->tempat,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat,
+            'nama_ortu' => $request->nama_ortu,
+            'nik_ortu' => $request->nik_ortu,
+            'lokasi' => $request->lokasi,
+            'ket' => $request->ket,
+            'status' => $request->status,
+            'lampiran' => $request->lampiran
         ]);
         return redirect()->route('arsip')->with('message', 'Data berhasil diupdate');
     }

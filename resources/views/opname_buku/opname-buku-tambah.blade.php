@@ -16,7 +16,7 @@
                 <form action="{{ route('op-buku.s')}}" method="POST">
                   @csrf
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('kode_klarifikasi')
                             class="text-danger"
@@ -29,7 +29,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('no_buku')
                             class="text-danger"
@@ -42,7 +42,7 @@
                       </div>
                     </div>
                     
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('no_register')
                             class="text-danger"
@@ -55,7 +55,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('tahun')
                             class="text-danger"
@@ -68,7 +68,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('kategori_buku')
                             class="text-danger"
@@ -81,7 +81,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('lokasi')
                             class="text-danger"
@@ -94,7 +94,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('ket')
                             class="text-danger"
@@ -107,7 +107,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('tingkat_perkembangan')
                             class="text-danger"

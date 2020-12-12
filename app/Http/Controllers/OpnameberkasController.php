@@ -59,7 +59,9 @@ class OpnameberkasController extends Controller
                 'jml_boks' => $request->jml_boks,
                 'no_boks' => $request->no_boks,
                 'lokasi' => $request->lokasi,
-                'ket' => $request->ket
+                'ket' => $request->ket,
+                'tingkat_perkembangan' => $request->tingkat_perkembangan
+
             ],
 
         ]);
@@ -124,7 +126,8 @@ class OpnameberkasController extends Controller
             'jml_boks' => $request->jml_boks,
             'no_boks' => $request->no_boks,
             'lokasi' => $request->lokasi,
-            'ket' => $request->ket
+            'ket' => $request->ket,
+            'tingkat_perkembangan' => $request->tingkat_perkembangan
         ]);
         return redirect()->route('op-berkas')->with('message', 'Data berhasil diupdate');
     }

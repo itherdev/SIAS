@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section('title', 'Stock Opname Berkas')
+@section('title', 'Stock Peminjaman Buku')
 @section('content')
 <div class="section-body">
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Laporan Opname Berkas</h4>
+                    <h4>Laporan Peminjaman Buku</h4>
                 </div>
                 <div class="card-body">
                     {{-- <div class="float-left">
@@ -37,41 +37,50 @@
                         </div>
                       </div>
                     @endif
+
+                    <div class="float-right">
+                      <a href="{{ route('peminjaman-buku.p')}}" target="_blank" class="btn btn-icon icon-left btn-primary">
+                        <i class="fas fa-print"> Cetak Data</i>
+                      </a>
+                  </div>
+                  <br> <br> 
+
                     <table class="table table-striped table-bordered table-sm">
                         <tr>
-                            <th>No</th>
-                            <th>Kode Klarifikasi</th>
-                            <th>No Berkas</th>
-                            <th>Tahun</th>
-                            <th>Kategori Berkas</th>
-                            <th>Uraian Berkas</th>
-                            <th>Jumlah Berkas</th>
-                            <th>Jumlah Boks</th>
-                            <th>No Boks</th>
-                            <th>lokasi</th>
-                            <th>Keterangan</th>
+                          <th>No</th>
+                          <th>No Buku</th>
+                          <th>No Register</th>
+                          <th>Tgl Pinjam</th>
+                          <th>Uraian Berkas</th>
+                          <th>Tahun</th>
+                          <th>Jumlah Berkas</th>
+                          <th>Nama Peminjam</th>
+                          <th>Unit Pengolah</th>
+                          <th>Nama Petugas</th>
+                          <th>Kategori Petugas</th>
+                          <th>Status</th>
                             
                         </tr>
-                            @foreach ($opname_berkas as $no => $data)
+                            @foreach ($peminjaman_buku as $no => $data)
                             <tr>
-                                <td>{{ $opname_berkas->firstItem()+$no}}</td>
-                                <td>{{ $data->kode_klarifikasi}}</td>
-                                <td>{{ $data->no_berkas}}</td>
+                                <td>{{ $peminjaman_buku->firstItem()+$no}}</td>
+                                <td>{{ $data->no_buku}}</td>
+                                <td>{{ $data->no_register}}</td>
+                                <td>{{ $data->tgl_pinjam}}</td>
+                                <td>{{ $data->uraian}}</td>
                                 <td>{{ $data->tahun}}</td>
-                                <td>{{ $data->kategori_berkas}}</td>
-                                <td>{{ $data->uraian_berkas}}</td>
                                 <td>{{ $data->jml_berkas}}</td>
-                                <td>{{ $data->jml_boks}}</td>
-                                <td>{{ $data->no_boks}}</td>
-                                <td>{{ $data->lokasi}}</td>
-                                <td>{{ $data->ket}}</td>
-                                
+                                <td>{{ $data->nama_peminjam}}</td>
+                                <td>{{ $data->unit_pengolah}}</td>
+                                <td>{{ $data->nama_petugas}}</td>
+                                <td>{{ $data->kategori_petugas}}</td>
+                                <td>{{ $data->status}}</td>
                             </tr>
                             @endforeach
                     </table>
-                    {{$opname_berkas->links()}}
+                    {{$peminjaman_buku->links()}}
                     <div> Jumlah Data 
-                        <?php $opname_berkas = DB::table('opname_berkas')->count(); print_r($opname_berkas); ?>
+                        <?php $peminjaman_buku = DB::table('peminjaman_buku')->count(); print_r($peminjaman_buku); ?>
                     </div>
                 </div>
             </div>

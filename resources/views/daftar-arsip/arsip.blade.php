@@ -7,8 +7,10 @@
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4>Data Arsip </h4>
-                    <hr>
+                  <div class="card-header">
+                    <h4>Daftar Arsip</h4>
+                </div>
+                <div class="card-body">
                     <div class="float-left">
                         <a href="{{ route('arsip.t')}}" class="btn btn-icon icon-left btn-primary">
                             <i class="far fa-edit">Tambah Data</i>
@@ -23,7 +25,7 @@
                             </div>
                           </div>
                         </form>
-                      </div>
+                    </div>
                         {{-- Cari Data --}}
                         {{-- <form action="{{ route('arsip.c')}}" class="form-inline my-2 my-lg-0" method="GET">
                                 <input class="form-control mr-sm-2" type="search"  name="cari" placeholder="Search " value="{{ old('cari') }}" aria-label="Search" data-width="250">
@@ -48,6 +50,8 @@
                             <th>No Register</th>
                             <th>Tahun</th>
                             <th>Jenis Arsip</th>
+                            <th>Nama </th>
+                            <th>NIK</th>
                             <th>Action</th>
                         </tr>
                             @foreach ($data_arsip as $no => $data)
@@ -57,6 +61,8 @@
                                 <td>{{ $data->no_register}}</td>
                                 <td>{{ $data->tahun}}</td>
                                 <td>{{ $data->jenis_arsip}}</td>
+                                <td>{{ $data->nama}}</td>
+                                 <td>{{ $data->nik}}</td>
                                 <td>
                                     <a href="{{ route('arsip.e',$data->id)}}" class="badge badge-primary">Edit</a>
                                     <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">

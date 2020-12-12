@@ -19,6 +19,18 @@ class CreateDataArsipTable extends Migration
             $table->string('no_register', 10)->unique();
             $table->year('tahun');
             $table->string('jenis_arsip');
+            $table->string('nik');
+            $table->string('nama');
+            $table->enum('jenis_kelamin', ['p', 'l']);
+            $table->string('tempat');
+            $table->string('tgl_lahir');
+            $table->string('alamat');
+            $table->string('nama_ortu');
+            $table->string('nik_ortu');
+            $table->string('lokasi');
+            $table->string('ket');
+            $table->string('status');
+            $table->string('lampiran');
             $table->timestamps();
         });
     }

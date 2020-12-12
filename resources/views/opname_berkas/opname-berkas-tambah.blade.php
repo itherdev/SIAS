@@ -16,7 +16,7 @@
                 <form action="{{ route('op-berkas.s')}}" method="POST">
                   @csrf
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('kode_klarifikasi')
                             class="text-danger"
@@ -29,7 +29,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('no_berkas')
                             class="text-danger"
@@ -42,7 +42,7 @@
                       </div>
                     </div>                  
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('tahun')
                             class="text-danger"
@@ -55,7 +55,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('kategori_berkas')
                             class="text-danger"
@@ -68,7 +68,7 @@
                       </div>
                     </div>
                     
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('uraian_berkas')
                             class="text-danger"
@@ -81,11 +81,11 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('jml_berkas')
                             class="text-danger"
-                        @enderror>jml_berkas
+                        @enderror>Jumlah Berkas
                           @error('jml_berkas')
                               | {{ $message}}
                           @enderror
@@ -94,7 +94,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('jml_boks')
                             class="text-danger"
@@ -107,7 +107,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('no_boks')
                             class="text-danger"
@@ -120,7 +120,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('lokasi')
                             class="text-danger"
@@ -133,7 +133,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label @error('ket')
                             class="text-danger"
