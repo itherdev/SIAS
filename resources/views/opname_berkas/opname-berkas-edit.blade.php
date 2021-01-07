@@ -209,6 +209,26 @@
                         </div>
                       </div>
 
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label @error('tingkat_perkembangan')
+                              class="text-danger"
+                          @enderror>tingkat Perkembangan
+                            @error('tingkat_perkembangan')
+                                | {{ $message}}
+                            @enderror
+                          </label>
+                          <input type="text" name="tingkat_perkembangan"
+                            @if (old('tingkat_perkembangan'))
+                              value="{{ old('tingkat_perkembangan')}}"
+                            @else
+                              value="{{ $opname_berkas->tingkat_perkembangan}}"
+                            @endif 
+                            class="form-control">
+                        </div>
+                      </div>
+                    </div>
+
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

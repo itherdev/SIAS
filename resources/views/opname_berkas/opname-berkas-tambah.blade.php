@@ -64,7 +64,17 @@
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="kategori_berkas" value="{{ old('kategori_berkas')}}" class="form-control">
+                        <select class="form-control" name="kategori_berkas" value="{{ old('kategori_berkas')}}">
+                          <option selected>Kategori Berkas</option>
+                          <option value="Umum">Umum</option>
+                          <option value="Terlambat I">Terlambat I</option>
+                          <option value="Terlambat II">Terlambat II</option>
+                          <option value="Istimewa">Istimewa</option>
+                          <option value="Pemutihan">Pemutihan</option>
+                          <option value="IN">IN</option>
+                          <option value="China">China</option>
+                        </select>
+                        
                       </div>
                     </div>
                     
@@ -146,6 +156,20 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label @error('tingkat_perkembangan')
+                          class="text-danger"
+                      @enderror>Tingkat Perkembangan
+                        @error('tingkat_perkembangan')
+                            | {{ $message}}
+                        @enderror
+                      </label>
+                      <input type="text" name="tingkat_perkembangan" value="{{ old('tingkat_perkembangan')}}" class="form-control">
+                    </div>
+                  </div>
+                </div>
 
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>

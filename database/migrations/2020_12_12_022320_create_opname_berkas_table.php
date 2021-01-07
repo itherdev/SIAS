@@ -18,13 +18,14 @@ class CreateOpnameBerkasTable extends Migration
             $table->string('kode_klarifikasi', 10)->unique();
             $table->string('no_berkas');
             $table->year('tahun');
-            $table->string('kategori_berkas');
+            $table->enum('kategori_berkas', ['Umum', 'Terlambat I', 'Terlambat II', 'Istimewa', 'Pemutihan', 'IN', 'China']);
             $table->string('uraian_berkas');
             $table->string('jml_berkas');
             $table->string('jml_boks');
             $table->string('no_boks');
             $table->string('lokasi');
             $table->string('ket');
+            $table->string('tingkat_perkembangan');
         });
     }
 
