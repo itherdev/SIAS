@@ -16,7 +16,7 @@
                         @csrf
                         @method('patch')
                         <dl class="row">
-                            <dt class="col-sm-3">Kode Klarifikasi</dt>
+                            <dt class="col-sm-3">Kode Klasifikasi</dt>
                             <dd class="col-sm-9">: {{ $opname_berkas->kode_klarifikasi}}</dd>
 
                             <dt class="col-sm-3">No Berkas</dt>
@@ -28,11 +28,17 @@
                             <dt class="col-sm-3">Kategori Berkas</dt>
                             <dd class="col-sm-9">: {{ $opname_berkas->kategori_berkas}}</dd>
 
-                            <dt class="col-sm-3">Uraian Berkas</dt>
+                            <dt class="col-sm-3">Uraian Informasi</dt>
                             <dd class="col-sm-9">: {{ $opname_berkas->uraian_berkas}}</dd>
 
-                            <dt class="col-sm-3">Jumlah berkas</dt>
+                            <dt class="col-sm-3">Jumlah Berkas</dt>
                             <dd class="col-sm-9">: {{ $opname_berkas->jml_berkas}}</dd>
+
+                            <dt class="col-sm-3">Jumlah Berkas Ada</dt>
+                            <dd class="col-sm-9">: {{ $opname_berkas->jml_berkasada}}</dd>
+
+                            <dt class="col-sm-3">Jumlah Berkas Tidak Ada</dt>
+                            <dd class="col-sm-9">: {{ $opname_berkas->jml_berkastidakada}}</dd>
 
                             <dt class="col-sm-3">Jumlah Boks</dt>
                             <dd class="col-sm-9">: {{ $opname_berkas->jml_boks}}</dd>

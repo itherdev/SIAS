@@ -22,7 +22,7 @@
                           <div class="form-group">
                             <label @error('kode_klarifikasi')
                                 class="text-danger"
-                            @enderror>Kode Klarifikasi
+                            @enderror>Kode Klasifikasi
                               @error('kode_klarifikasi')
                                   | {{ $message}}
                               @enderror
@@ -84,13 +84,21 @@
                                   | {{ $message}}
                               @enderror
                             </label>
-                            <input type="text" name="kategori_berkas"
+                              <select class="form-control" name="kategori_berkas" 
                               @if (old('kategori_berkas'))
                                 value="{{ old('kategori_berkas')}}"
                               @else
                                 value="{{ $opname_berkas->kategori_berkas}}"
-                              @endif 
-                              class="form-control">
+                              @endif >
+                                <option selected>Kategori Berkas</option>
+                                <option value="Umum">Umum</option>
+                                <option value="Terlambat I">Terlambat I</option>
+                                <option value="Terlambat II">Terlambat II</option>
+                                <option value="Istimewa">Istimewa</option>
+                                <option value="Pemutihan">Pemutihan</option>
+                                <option value="IN">IN</option>
+                                <option value="China">China</option>
+                              </select>
                           </div>
                         </div>
                         
@@ -98,7 +106,7 @@
                           <div class="form-group">
                             <label @error('uraian_berkas')
                                 class="text-danger"
-                            @enderror>Uraian Berkas
+                            @enderror>Uraian Informasi
                               @error('uraian_berkas')
                                   | {{ $message}}
                               @enderror
@@ -117,7 +125,7 @@
                           <div class="form-group">
                             <label @error('jml_berkas')
                                 class="text-danger"
-                            @enderror>jml_berkas
+                            @enderror>Jumlah Berkas
                               @error('jml_berkas')
                                   | {{ $message}}
                               @enderror
@@ -127,6 +135,44 @@
                                 value="{{ old('jml_berkas')}}"
                               @else
                                 value="{{ $opname_berkas->jml_berkas}}"
+                              @endif 
+                              class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label @error('jml_berkasada')
+                                class="text-danger"
+                            @enderror>Jumlah Berkas Ada
+                              @error('jml_berkasada')
+                                  | {{ $message}}
+                              @enderror
+                            </label>
+                            <input type="text" name="jml_berkasada"
+                              @if (old('jml_berkasada'))
+                                value="{{ old('jml_berkasada')}}"
+                              @else
+                                value="{{ $opname_berkas->jml_berkasada}}"
+                              @endif 
+                              class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label @error('jml_berkastidakada')
+                                class="text-danger"
+                            @enderror>Jumlah Berkas Tidak Ada
+                              @error('jml_berkastidakada')
+                                  | {{ $message}}
+                              @enderror
+                            </label>
+                            <input type="text" name="jml_berkastidakada"
+                              @if (old('jml_berkastidakada'))
+                                value="{{ old('jml_berkastidakada')}}"
+                              @else
+                                value="{{ $opname_berkas->jml_berkastidakada}}"
                               @endif 
                               class="form-control">
                           </div>
@@ -213,7 +259,7 @@
                         <div class="form-group">
                           <label @error('tingkat_perkembangan')
                               class="text-danger"
-                          @enderror>tingkat Perkembangan
+                          @enderror>Tingkat Perkembangan
                             @error('tingkat_perkembangan')
                                 | {{ $message}}
                             @enderror

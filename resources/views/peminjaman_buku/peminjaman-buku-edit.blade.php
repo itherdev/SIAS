@@ -23,7 +23,7 @@
                           <div class="form-group">
                             <label @error('no_buku')
                                 class="text-danger"
-                            @enderror>No buku
+                            @enderror>Buku
                               @error('no_buku')
                                   | {{ $message}}
                               @enderror
@@ -80,7 +80,7 @@
                           <div class="form-group">
                             <label @error('uraian')
                                 class="text-danger"
-                            @enderror>Uraian
+                            @enderror>Jenis Arsip
                               @error('uraian')
                                   | {{ $message}}
                               @enderror

@@ -50,7 +50,7 @@
                           <th>No</th>
                           <th>No Berkas</th>
                           <th>Tgl Kembali</th>
-                          <th>Uraian Berkas</th>
+                          <th>Jenis Arsip</th>
                           <th>Tahun</th>
                           <th>Jumlah Berkas</th>
                           <th>Nama Peminjam</th>
@@ -65,7 +65,7 @@
                                 <td>{{ $pengembalian_berkas->firstItem()+$no}}</td>
                                 <td>{{ $data->no_berkas}}</td>
                                 <td>{{ $data->tgl_kembali}}</td>
-                                <td>{{ $data->uraian_berkas}}</td>
+                                <td>{{ $data->jenis_arsip}}</td>
                                 <td>{{ $data->tahun}}</td>
                                 <td>{{ $data->jml_berkas}}</td>
                                 <td>{{ $data->nama_peminjam}}</td>

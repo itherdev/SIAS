@@ -64,7 +64,7 @@ class PengembalianberkasController extends Controller
             [
                 'no_berkas' => $request->no_berkas,
                 'tgl_kembali' => $request->tgl_kembali,
-                'uraian_berkas' => $request->uraian_berkas,
+                'jenis_arsip' => $request->jenis_arsip,
                 'tahun' => $request->tahun,
                 'jml_berkas' => $request->jml_berkas,
                 'nama_peminjam' => $request->nama_peminjam,
@@ -83,7 +83,7 @@ class PengembalianberkasController extends Controller
     {
         $validation = $request->validate([
             'no_berkas' => 'required|max:20|min:3',
-            'uraian_berkas' => 'required|max:100|min:3',
+            'jenis_arsip' => 'required|max:100|min:3',
             'jml_berkas' => 'required',
             'nama_peminjam' => 'required',
             'unit_pengolah' => 'required',
@@ -130,7 +130,7 @@ class PengembalianberkasController extends Controller
         DB::table('pengembalian_berkas')->where('id', $id)->update([
             'no_berkas' => $request->no_berkas,
             'tgl_kembali' => $request->tgl_kembali,
-            'uraian_berkas' => $request->uraian_berkas,
+            'jenis_arsip' => $request->jenis_arsip,
             'tahun' => $request->tahun,
             'jml_berkas' => $request->jml_berkas,
             'nama_peminjam' => $request->nama_peminjam,

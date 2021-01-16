@@ -44,8 +44,8 @@
                             <th>No</th>
                             <th>No Berkas</th>
                             <th>Nama Peminjam</th>
-                            <th>Tgl Pinjam</th>
-                            <th>Uraian Berkas</th>
+                            <th>Tangal Pinjam</th>
+                            <th>Jenis Arsip</th>
                             <th>Jumlah Berkas</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -60,14 +60,14 @@
                                 <td>{{ $data->jml_berkas}}</td>
                                 <td>{{ $data->status}}</td>
                                 <td>
-                                    <a href="{{ route('peminjaman-berkas.e',$data->id)}}" class="badge badge-primary">Edit</a>
+                                    <a href="{{ route('peminjaman-berkas.e',$data->id)}}" class="badge badge-primary"><i class="fas fa-pen"></i></a>
                                     <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                                    <form action="{{ route('peminjaman-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                    </form>
-                                        Delete</a>
-                                    <a href="{{ route('peminjaman-berkas.v',$data->id)}}" class="badge badge-info">Detail</a>
+                                        <form action="{{ route('peminjaman-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                        </form>
+                                    <i class="fas fa-trash"></i></a>
+                                    <a href="{{ route('peminjaman-berkas.v',$data->id)}}" class="badge badge-info"><i class="fas fa-eye"></i></a>
                                 </td>
                             </tr>
                             @endforeach

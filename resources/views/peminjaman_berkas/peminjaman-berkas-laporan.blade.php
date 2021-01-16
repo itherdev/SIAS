@@ -50,7 +50,7 @@
                           <th>No</th>
                           <th>No Berkas</th>
                           <th>Tgl Pinjam</th>
-                          <th>Uraian Berkas</th>
+                          <th>Jenis Arsip</th>
                           <th>Tahun</th>
                           <th>Jumlah Berkas</th>
                           <th>Nama Peminjam</th>

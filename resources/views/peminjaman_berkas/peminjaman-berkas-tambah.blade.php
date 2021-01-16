@@ -47,7 +47,7 @@
                       <div class="form-group">
                         <label @error('uraian_berkas')
                             class="text-danger"
-                        @enderror>Uraian Berkas
+                        @enderror>Jenis Arsip
                           @error('uraian_berkas')
                               | {{ $message}}
                           @enderror
@@ -65,7 +65,7 @@
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="number" name="tahun" value="{{ old('tahun')}}" class="form-control">
+                        <input type="text" name="tahun" value="{{ old('tahun')}}" class="form-control">
                       </div>
                     </div>
 
@@ -73,7 +73,7 @@
                       <div class="form-group">
                         <label @error('jml_berkas')
                             class="text-danger"
-                        @enderror>Jml Berkas
+                        @enderror>Jumlah Berkas
                           @error('jml_berkas')
                               | {{ $message}}
                           @enderror

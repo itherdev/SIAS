@@ -20,7 +20,7 @@
                       <div class="form-group">
                         <label @error('kode_klarifikasi')
                             class="text-danger"
-                        @enderror>Kode Klarifikasi
+                        @enderror>Kode Klasifikasi
                           @error('kode_klarifikasi')
                               | {{ $message}}
                           @enderror
@@ -59,7 +59,7 @@
                       <div class="form-group">
                         <label @error('tahun')
                             class="text-danger"
-                        @enderror>Tahun
+                        @enderror>Kurun Waktu / Tahun
                           @error('tahun')
                               | {{ $message}}
                           @enderror
@@ -77,7 +77,42 @@
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="kategori_buku" value="{{ old('kategori_buku')}}" class="form-control">
+                        <select class="form-control" name="kategori_buku" value="{{ old('kategori_buku')}}">
+                          <option selected>Kategori Buku</option>
+                          <option value="Umum">Umum</option>
+                          <option value="Terlambat I">Terlambat I</option>
+                          <option value="Terlambat II">Terlambat II</option>
+                          <option value="Istimewa">Istimewa</option>
+                          <option value="Pemutihan">Pemutihan</option>
+                          <option value="IN">IN</option>
+                          <option value="China">China</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label @error('uraian')
+                            class="text-danger"
+                        @enderror>Uraian Informasi
+                          @error('uraian')
+                              | {{ $message}}
+                          @enderror
+                        </label>
+                        <input type="text" name="uraian" value="{{ old('uraian')}}" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label @error('jml_buku')
+                            class="text-danger"
+                        @enderror>Jumlah Buku
+                          @error('jml_buku')
+                              | {{ $message}}
+                          @enderror
+                        </label>
+                        <input type="text" name="jml_buku" value="{{ old('jml_buku')}}" class="form-control">
                       </div>
                     </div>
 

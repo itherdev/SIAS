@@ -53,6 +53,8 @@ class OpnamebukuController extends Controller
                 'no_register' => $request->no_register,
                 'tahun' => $request->tahun,
                 'kategori_buku' => $request->kategori_buku,
+                'uraian' => $request->uraian,
+                'jml_buku' => $request->jml_buku,
                 'lokasi' => $request->lokasi,
                 'ket' => $request->ket,
                 'tingkat_perkembangan' => $request->tingkat_perkembangan
@@ -117,6 +119,8 @@ class OpnamebukuController extends Controller
             'no_register' => $request->no_register,
             'tahun' => $request->tahun,
             'kategori_buku' => $request->kategori_buku,
+            'uraian' => $request->uraian,
+            'jml_buku' => $request->jml_buku,
             'lokasi' => $request->lokasi,
             'ket' => $request->ket,
             'tingkat_perkembangan' => $request->tingkat_perkembangan

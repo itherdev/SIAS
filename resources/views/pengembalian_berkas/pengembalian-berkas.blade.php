@@ -44,8 +44,8 @@
                             <th>No</th>
                             <th>No Berkas</th>
                             <th>Nama Peminjam</th>
-                            <th>Tgl Kembali</th>
-                            <th>Uraian Berkas</th>
+                            <th>Tangal Kembali</th>
+                            <th>Jenis Arsip</th>
                             <th>Jumlah Berkas</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -56,18 +56,18 @@
                                 <td>{{ $data->no_berkas}}</td>
                                 <td>{{ $data->nama_peminjam}}</td>
                                 <td>{{ $data->tgl_kembali}}</td>
-                                <td>{{ $data->uraian_berkas}}</td>
+                                <td>{{ $data->jenis_arsip}}</td>
                                 <td>{{ $data->jml_berkas}}</td>
                                 <td>{{ $data->status}}</td>
                                 <td>
-                                    <a href="{{ route('pengembalian-berkas.e',$data->id)}}" class="badge badge-primary">Edit</a>
+                                    <a href="{{ route('pengembalian-berkas.e',$data->id)}}" class="badge badge-primary"><i class="fas fa-pen"></i></a>
                                     <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                                    <form action="{{ route('pengembalian-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                    </form>
-                                        Delete</a>
-                                    <a href="{{ route('pengembalian-berkas.v',$data->id)}}" class="badge badge-info">Detail</a>
+                                        <form action="{{ route('pengembalian-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                        </form>
+                                    <i class="fas fa-trash"></i></a>
+                                    <a href="{{ route('pengembalian-berkas.v',$data->id)}}" class="badge badge-info"><i class="fas fa-eye"></i></a>
                                 </td>
                             </tr>
                             @endforeach

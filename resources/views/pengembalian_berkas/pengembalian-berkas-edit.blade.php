@@ -59,18 +59,18 @@
 
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label @error('uraian_berkas')
+                            <label @error('jenis_arsip')
                                 class="text-danger"
-                            @enderror>Uraian Berkas
-                              @error('uraian_berkas')
+                            @enderror>Jenis Arsip
+                              @error('jenis_arsip')
                                   | {{ $message}}
                               @enderror
                             </label>
-                            <input type="text" name="uraian_berkas"
-                            @if (old('uraian_berkas'))
-                              value="{{ old('uraian_berkas')}}"
+                            <input type="text" name="jenis_arsip"
+                            @if (old('jenis_arsip'))
+                              value="{{ old('jenis_arsip')}}"
                             @else
-                              value="{{ $pengembalian_berkas->uraian_berkas}}"
+                              value="{{ $pengembalian_berkas->jenis_arsip}}"
                             @endif 
                             class="form-control"> 
                           </div>
@@ -99,7 +99,7 @@
                           <div class="form-group">
                             <label @error('jml_berkas')
                                 class="text-danger"
-                            @enderror>Jml Berkas
+                            @enderror>Jumlah Berkas
                               @error('jml_berkas')
                                   | {{ $message}}
                               @enderror

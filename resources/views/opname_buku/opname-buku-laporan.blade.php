@@ -48,11 +48,13 @@
             <table class="table table-striped table-bordered table-sm">
                 <tr>
                     <th>No</th>
-                    <th>Kode Klarifikasi</th>
+                    <th>Kode Klasifikasi</th>
                     <th>No Buku</th>
                     <th>No Register</th>
-                    <th>Tahun</th>
+                    <th>Kurun Waktu/Tahun</th>
                     <th>Kategori Buku</th>
+                    <th>Uraian Informasi</th>
+                    <th>Jumlah Buku</th>
                     <th>Lokasi</th>
                     <th>Keterangan </th>
                     <th>Tingkat Perkembangan</th>
@@ -65,6 +67,8 @@
                         <td>{{ $data->no_register}}</td>
                         <td>{{ $data->tahun}}</td>
                         <td>{{ $data->kategori_buku}}</td>
+                        <td>{{ $data->uraian}}</td>
+                        <td>{{ $data->jml_buku}}</td>
                         <td>{{ $data->lokasi}}</td>
                         <td>{{ $data->ket}}</td>
                         <td>{{ $data->tingkat_perkembangan}}</td>

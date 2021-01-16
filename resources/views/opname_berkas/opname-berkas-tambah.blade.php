@@ -20,7 +20,7 @@
                       <div class="form-group">
                         <label @error('kode_klarifikasi')
                             class="text-danger"
-                        @enderror>Kode Klarifikasi
+                        @enderror>Kode Klasifikasi
                           @error('kode_klarifikasi')
                               | {{ $message}}
                           @enderror
@@ -74,7 +74,6 @@
                           <option value="IN">IN</option>
                           <option value="China">China</option>
                         </select>
-                        
                       </div>
                     </div>
                     
@@ -82,7 +81,7 @@
                       <div class="form-group">
                         <label @error('uraian_berkas')
                             class="text-danger"
-                        @enderror>Uraian Berkas
+                        @enderror>Uraian Informasi
                           @error('uraian_berkas')
                               | {{ $message}}
                           @enderror
@@ -101,6 +100,32 @@
                           @enderror
                         </label>
                         <input type="text" name="jml_berkas" value="{{ old('jml_berkas')}}" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label @error('jml_berkasada')
+                            class="text-danger"
+                        @enderror>Jumlah Berkas Ada
+                          @error('jml_berkasada')
+                              | {{ $message}}
+                          @enderror
+                        </label>
+                        <input type="text" name="jml_berkasada" value="{{ old('jml_berkasada')}}" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label @error('jml_berkastidakada')
+                            class="text-danger"
+                        @enderror>Jumlah Berkas Tidak Ada
+                          @error('jml_berkastidakada')
+                              | {{ $message}}
+                          @enderror
+                        </label>
+                        <input type="text" name="jml_berkastidakada" value="{{ old('jml_berkastidakada')}}" class="form-control">
                       </div>
                     </div>
 

@@ -61,7 +61,7 @@
                           <div class="form-group">
                             <label @error('uraian_berkas')
                                 class="text-danger"
-                            @enderror>Uraian Berkas
+                            @enderror>Jenis Arsip
                               @error('uraian_berkas')
                                   | {{ $message}}
                               @enderror
@@ -99,7 +99,7 @@
                           <div class="form-group">
                             <label @error('jml_berkas')
                                 class="text-danger"
-                            @enderror>Jml Berkas
+                            @enderror>Jumlah Berkas
                               @error('jml_berkas')
                                   | {{ $message}}
                               @enderror

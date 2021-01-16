@@ -21,7 +21,7 @@
                       <div class="form-group">
                         <label @error('no_buku')
                             class="text-danger"
-                        @enderror>No buku
+                        @enderror>Buku
                           @error('no_buku')
                               | {{ $message}}
                           @enderror
@@ -60,7 +60,7 @@
                       <div class="form-group">
                         <label @error('uraian')
                             class="text-danger"
-                        @enderror>Uraian
+                        @enderror>Jenis Arsip
                           @error('uraian')
                               | {{ $message}}
                           @enderror
@@ -78,7 +78,7 @@
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="number" name="tahun" value="{{ old('tahun')}}" class="form-control">
+                        <input type="text" name="tahun" value="{{ old('tahun')}}" class="form-control">
                       </div>
                     </div>
 
@@ -86,7 +86,7 @@
                       <div class="form-group">
                         <label @error('jml_berkas')
                             class="text-danger"
-                        @enderror>Jumlah Berkas
+                        @enderror>Jumlah Buku
                           @error('jml_berkas')
                               | {{ $message}}
                           @enderror

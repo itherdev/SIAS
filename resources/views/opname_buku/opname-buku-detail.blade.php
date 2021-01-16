@@ -16,7 +16,7 @@
                         @csrf
                         @method('patch')
                         <dl class="row">
-                            <dt class="col-sm-3">Kode Klarifikasi</dt>
+                            <dt class="col-sm-3">Kode Klasifikasi</dt>
                             <dd class="col-sm-9">: {{ $opname_buku->kode_klarifikasi}}</dd>
 
                             <dt class="col-sm-3">No buku</dt>
@@ -25,12 +25,18 @@
                             <dt class="col-sm-3">No Register</dt>
                             <dd class="col-sm-9">: {{ $opname_buku->no_register}}</dd>
 
-                            <dt class="col-sm-3">Tahun</dt>
+                            <dt class="col-sm-3">Kurun Waktu/Tahun</dt>
                             <dd class="col-sm-9">: {{ $opname_buku->tahun}}</dd>
 
                             <dt class="col-sm-3">Kategori buku</dt>
                             <dd class="col-sm-9">: {{ $opname_buku->kategori_buku}}</dd>
 
+                            <dt class="col-sm-3">Uraian Informasi</dt>
+                            <dd class="col-sm-9">: {{ $opname_buku->uraian}}</dd>
+
+                            <dt class="col-sm-3">Jumlah Buku</dt>
+                            <dd class="col-sm-9">: {{ $opname_buku->jml_buku}}</dd>
+                            
                             <dt class="col-sm-3">Lokasi</dt>
                             <dd class="col-sm-9">: {{ $opname_buku->lokasi}}</dd>
 

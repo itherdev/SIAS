@@ -43,13 +43,13 @@
                             <td>{{ $data->nm_op}}</td>
                             <td>{{ $data->level}}</td>
                             <td>
-                                <a href="{{ route('op.e',$data->id)}}" class="badge badge-primary">Edit</a>
+                                <a href="{{ route('op.e',$data->id)}}" class="badge badge-primary"><i class="fas fa-pen"></i></a>
                                 <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
                                 <form action="{{ route('op.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
                                     @csrf
                                     @method('delete')
                                 </form>
-                                    Delete</a>
+                                <i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

@@ -48,12 +48,12 @@
                     <table class="table table-striped table-bordered table-sm">
                         <tr>
                           <th>No</th>
-                          <th>No Buku</th>
+                          <th>Buku</th>
                           <th>No Register</th>
                           <th>Tgl Pinjam</th>
-                          <th>Uraian Berkas</th>
+                          <th>Jenis Arsip</th>
                           <th>Tahun</th>
-                          <th>Jumlah Berkas</th>
+                          <th>Jumlah Buku</th>
                           <th>Nama Peminjam</th>
                           <th>Unit Pengolah</th>
                           <th>Nama Petugas</th>

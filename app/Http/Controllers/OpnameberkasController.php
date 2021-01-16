@@ -56,6 +56,8 @@ class OpnameberkasController extends Controller
                 'kategori_berkas' => $request->kategori_berkas,
                 'uraian_berkas' => $request->uraian_berkas,
                 'jml_berkas' => $request->jml_berkas,
+                'jml_berkasada' => $request->jml_berkasada,
+                'jml_berkastidakada' => $request->jml_berkastidakada,
                 'jml_boks' => $request->jml_boks,
                 'no_boks' => $request->no_boks,
                 'lokasi' => $request->lokasi,
@@ -74,13 +76,6 @@ class OpnameberkasController extends Controller
         $validation = $request->validate([
             'kode_klarifikasi' => 'required|max:10|min:3',
             'no_berkas' => 'required|max:10|min:3',
-            'kategori_berkas' => 'required|max:100|min:3',
-            'uraian_berkas' => 'required|max:100|min:3',
-            'jml_berkas' => 'required',
-            'jml_boks' => 'required',
-            'no_boks' => 'required',
-            'lokasi' => 'required|max:100|min:3',
-            'ket' => 'required|max:100|min:3'
         ]);
     }
 
@@ -125,6 +120,8 @@ class OpnameberkasController extends Controller
             'kategori_berkas' => $request->kategori_berkas,
             'uraian_berkas' => $request->uraian_berkas,
             'jml_berkas' => $request->jml_berkas,
+            'jml_berkasada' => $request->jml_berkasada,
+            'jml_berkastidakada' => $request->jml_berkastidakada,
             'jml_boks' => $request->jml_boks,
             'no_boks' => $request->no_boks,
             'lokasi' => $request->lokasi,

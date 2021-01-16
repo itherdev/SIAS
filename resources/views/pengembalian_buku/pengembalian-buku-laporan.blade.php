@@ -48,10 +48,10 @@
                     <table class="table table-striped table-bordered table-sm">
                         <tr>
                           <th>No</th>
-                          <th>No Buku</th>
+                          <th>Buku</th>
                           <th>No Register</th>
                           <th>Tgl Kembali</th>
-                          <th>Uraian Berkas</th>
+                          <th>Jenis Arsip</th>
                           <th>Tahun</th>
                           <th>Jumlah Berkas</th>
                           <th>Nama Peminjam</th>
@@ -67,7 +67,7 @@
                                 <td>{{ $data->no_buku}}</td>
                                 <td>{{ $data->no_register}}</td>
                                 <td>{{ $data->tgl_kembali}}</td>
-                                <td>{{ $data->uraian}}</td>
+                                <td>{{ $data->jenis_arsip}}</td>
                                 <td>{{ $data->tahun}}</td>
                                 <td>{{ $data->jml_berkas}}</td>
                                 <td>{{ $data->nama_peminjam}}</td>

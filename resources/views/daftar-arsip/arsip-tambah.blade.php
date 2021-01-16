@@ -52,7 +52,7 @@
                             | {{ $message}}
                         @enderror
                       </label>
-                      <input type="number" name="tahun" value="{{ old('tahun')}}" class="form-control">
+                      <input type="text" name="tahun" value="{{ old('tahun')}}" class="form-control">
                     </div>
                   </div>
                 
@@ -79,7 +79,7 @@
                           | {{ $message}}
                       @enderror
                     </label>
-                    <input type="number" name="nik" value="{{ old('nik')}}" class="form-control">
+                    <input type="text" name="nik" value="{{ old('nik')}}" class="form-control">
                   </div>
                 </div>
 

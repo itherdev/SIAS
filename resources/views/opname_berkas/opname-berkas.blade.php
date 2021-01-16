@@ -42,7 +42,7 @@
                     <table class="table table-striped table-bordered table-sm">
                         <tr>
                             <th>No</th>
-                            <th>Kode Klarifikasi</th>
+                            <th>Kode Klasifikasi</th>
                             <th>No Berkas</th>
                             <th>Tahun</th>
                             <th>Kategori Berkas</th>
@@ -58,14 +58,16 @@
                                 <td>{{ $data->kategori_berkas}}</td>
                                 <td>{{ $data->uraian_berkas}}</td>
                                 <td>
-                                    <a href="{{ route('op-berkas.e',$data->id)}}" class="badge badge-primary">Edit</a>
+                                    <a href="{{ route('op-berkas.e',$data->id)}}" class="badge badge-primary"><i class="fas fa-pen"></i></a>
                                     <a href="#"data-id="{{ $data->id}}" class="badge badge-danger swal-confirm">
-                                    <form action="{{ route('op-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                    </form>
-                                        Delete</a>
-                                    <a href="{{ route('op-berkas.v',$data->id)}}" class="badge badge-info">Detail</a>
+                                        <form action="{{ route('op-berkas.d',$data->id)}}" id="delete{{ $data->id}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                        </form>
+                                    <i class="fas fa-trash"></i></a>
+                                    <a href="{{ route('op-berkas.v',$data->id)}}" class="badge badge-info"><i class="fas fa-eye"></i></a>
+
+                                    
                                 </td>
                             </tr>
                             @endforeach

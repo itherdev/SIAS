@@ -45,14 +45,14 @@
 
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label @error('uraian_berkas')
+                        <label @error('jenis_arsip')
                             class="text-danger"
-                        @enderror>Uraian Berkas
-                          @error('uraian_berkas')
+                        @enderror>Jenis Arsip
+                          @error('jenis_arsip')
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="text" name="uraian_berkas" value="{{ old('uraian_berkas')}}" class="form-control">
+                        <input type="text" name="jenis_arsip" value="{{ old('jenis_arsip')}}" class="form-control">
                       </div>
                     </div>
                     
@@ -65,7 +65,7 @@
                               | {{ $message}}
                           @enderror
                         </label>
-                        <input type="number" name="tahun" value="{{ old('tahun')}}" class="form-control">
+                        <input type="text" name="tahun" value="{{ old('tahun')}}" class="form-control">
                       </div>
                     </div>
 
@@ -73,7 +73,7 @@
                       <div class="form-group">
                         <label @error('jml_berkas')
                             class="text-danger"
-                        @enderror>Jml Berkas
+                        @enderror>Jumlah Berkas
                           @error('jml_berkas')
                               | {{ $message}}
                           @enderror

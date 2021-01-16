@@ -23,7 +23,7 @@
                           <div class="form-group">
                             <label @error('no_buku')
                                 class="text-danger"
-                            @enderror>No buku
+                            @enderror>Buku
                               @error('no_buku')
                                   | {{ $message}}
                               @enderror
@@ -78,18 +78,18 @@
 
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label @error('uraian')
+                            <label @error('jenis_arsip')
                                 class="text-danger"
-                            @enderror>Uraian
-                              @error('uraian')
+                            @enderror>Jenis Arsip
+                              @error('jenis_arsip')
                                   | {{ $message}}
                               @enderror
                             </label>
-                            <input type="text" name="uraian"
-                            @if (old('uraian'))
-                              value="{{ old('uraian')}}"
+                            <input type="text" name="jenis_arsip"
+                            @if (old('jenis_arsip'))
+                              value="{{ old('jenis_arsip')}}"
                             @else
-                              value="{{ $pengembalian_buku->uraian}}"
+                              value="{{ $pengembalian_buku->jenis_arsip}}"
                             @endif 
                             class="form-control"> 
                           </div>
