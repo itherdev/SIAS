@@ -68,6 +68,7 @@
                                         @method('delete')
                                     </form>
                                         Delete</a>
+                                    <a href="{{ route('peminjaman-buku.v',$data->id)}}" class="badge badge-info">Detail</a>
                                 </td>
                             </tr>
                             @endforeach

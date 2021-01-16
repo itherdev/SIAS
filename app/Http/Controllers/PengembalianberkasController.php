@@ -101,6 +101,8 @@ class PengembalianberkasController extends Controller
      */
     public function show($id)
     {
+        $pengembalian_berkas = DB::table('pengembalian_berkas')->where('id', $id)->first();
+        return view('pengembalian_berkas.pengembalian-berkas-detail', ['pengembalian_berkas' => $pengembalian_berkas]);
     }
 
     /**

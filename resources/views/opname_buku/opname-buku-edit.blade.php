@@ -59,7 +59,7 @@
                       <div class="form-group">
                         <label @error('no_register')
                             class="text-danger"
-                        @enderror>No buku
+                        @enderror>No Register
                           @error('no_register')
                               | {{ $message}}
                           @enderror

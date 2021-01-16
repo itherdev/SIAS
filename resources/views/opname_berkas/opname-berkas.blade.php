@@ -6,9 +6,10 @@
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
-                <div class="card-header">
-                    <h4>Opname Berkas</h4>
-                </div>
+                <div class="card-body">
+                    <div class="card-header">
+                        <h4>Opname Berkas</h4>
+                    </div>
                 <div class="card-body">
                     <div class="float-left">
                         <a href="{{ route('op-berkas.t')}}" class="btn btn-icon icon-left btn-primary">
@@ -64,6 +65,7 @@
                                         @method('delete')
                                     </form>
                                         Delete</a>
+                                    <a href="{{ route('op-berkas.v',$data->id)}}" class="badge badge-info">Detail</a>
                                 </td>
                             </tr>
                             @endforeach

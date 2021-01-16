@@ -66,7 +66,8 @@ class OperatorController extends Controller
      */
     public function show($id)
     {
-        //
+        $operator = DB::table('operator')->where('id', $id)->first();
+        return view('operator.operator-detail', ['operator' => $operator]);
     }
 
     /**

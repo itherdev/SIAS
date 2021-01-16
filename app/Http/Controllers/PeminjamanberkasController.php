@@ -112,6 +112,8 @@ class PeminjamanberkasController extends Controller
      */
     public function show($id)
     {
+        $peminjaman_berkas = DB::table('peminjaman_berkas')->where('id', $id)->first();
+        return view('peminjaman_berkas.peminjaman-berkas-detail', ['peminjaman_berkas' => $peminjaman_berkas]);
     }
 
     /**

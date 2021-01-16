@@ -85,7 +85,8 @@ class OpnamebukuController extends Controller
      */
     public function show($id)
     {
-        //
+        $opname_buku = DB::table('opname_buku')->where('id', $id)->first();
+        return view('opname_buku.opname-buku-detail', ['opname_buku' => $opname_buku]);
     }
 
     /**

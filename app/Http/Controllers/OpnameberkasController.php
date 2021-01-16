@@ -92,6 +92,8 @@ class OpnameberkasController extends Controller
      */
     public function show($id)
     {
+        $opname_berkas = DB::table('opname_berkas')->where('id', $id)->first();
+        return view('opname_berkas.opname-berkas-detail', ['opname_berkas' => $opname_berkas]);
     }
 
     /**

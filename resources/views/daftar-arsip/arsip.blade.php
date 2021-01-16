@@ -9,6 +9,7 @@
                 <div class="card-body">
                   <div class="card-header">
                     <h4>Daftar Arsip</h4>
+                  
                 </div>
                 <div class="card-body">
                     <div class="float-left">
@@ -71,6 +72,7 @@
                                         @method('delete')
                                     </form>
                                         Delete</a>
+                                    <a href="{{ route('arsip.v',$data->id)}}" class="badge badge-info">Detail</a>
                                 </td>
                             </tr>
                             @endforeach

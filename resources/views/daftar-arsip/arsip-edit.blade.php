@@ -59,7 +59,7 @@
                       <div class="form-group">
                         <label @error('tahun')
                             class="text-danger"
-                        @enderror>Nama Barang
+                        @enderror>Tahun
                           @error('tahun')
                               | {{ $message}}
                           @enderror

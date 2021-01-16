@@ -31,12 +31,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', function () {
         return view('index');
     });
-    Route::get('crud', 'CrudController@index')->name('crud');
-    Route::get('crud/tambah', 'CrudController@tambah')->name('cr.t');
-    Route::post('crud', 'CrudController@simpan')->name('cr.s');
-    Route::delete('crud/{id}', 'CrudController@delete')->name('cr.d');
-    Route::get('crud/{id}/edit', 'CrudController@edit')->name('cr.e');
-    Route::patch('crud/{id}', 'CrudController@update')->name('cr.u');
+    // Route::get('crud', 'CrudController@index')->name('crud');
+    // Route::get('crud/tambah', 'CrudController@tambah')->name('cr.t');
+    // Route::post('crud', 'CrudController@simpan')->name('cr.s');
+    // Route::delete('crud/{id}', 'CrudController@delete')->name('cr.d');
+    // Route::get('crud/{id}/edit', 'CrudController@edit')->name('cr.e');
+    // Route::patch('crud/{id}', 'CrudController@update')->name('cr.u');
 
     /*------------------ Data Master Aplikasi--------------------------*/
     //Daftar Operator
@@ -55,6 +55,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('arsip/{id}', 'ArsipController@destroy')->name('arsip.d');
     Route::get('arsip/{id}/edit', 'ArsipController@edit')->name('arsip.e');
     Route::patch('arsip/{id}', 'ArsipController@update')->name('arsip.u');
+    Route::get('arsip/{id}/detail', 'ArsipController@show')->name('arsip.v');
     Route::get('arsip/cari', 'ArsipController@cari')->name('arsip.c');
     Route::get('arsip/cetak', 'ArsipController@cetak')->name('arsip.ct');
     //cetak
@@ -69,6 +70,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('op-berkas/{id}', 'OpnameberkasController@destroy')->name('op-berkas.d');
     Route::get('op-berkas/{id}/edit', 'OpnameberkasController@edit')->name('op-berkas.e');
     Route::patch('op-berkas/{id}', 'OpnameberkasController@update')->name('op-berkas.u');
+    Route::get('op-berkas/{id}/detail', 'OpnameberkasController@show')->name('op-berkas.v');
     Route::get('op-berkas/cari', 'OpnameberkasController@cari')->name('op-berkas.c');
     Route::get('op-berkas/cetak', 'OpnameberkasController@cetak')->name('op-berkas.ct');
     //cetak
@@ -82,6 +84,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('op-buku/{id}', 'OpnamebukuController@destroy')->name('op-buku.d');
     Route::get('op-buku/{id}/edit', 'OpnamebukuController@edit')->name('op-buku.e');
     Route::patch('op-buku/{id}', 'OpnamebukuController@update')->name('op-buku.u');
+    Route::get('op-buku/{id}/detail', 'OpnamebukuController@show')->name('op-buku.v');
     Route::get('op-buku/cari', 'OpnamebukuController@cari')->name('op-buku.c');
     Route::get('op-buku/cetak', 'OpnamebukuController@cetak')->name('op-buku.ct');
     //cetak
@@ -96,6 +99,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('peminjaman-berkas/{id}', 'PeminjamanberkasController@destroy')->name('peminjaman-berkas.d');
     Route::get('peminjaman-berkas/{id}/edit', 'PeminjamanberkasController@edit')->name('peminjaman-berkas.e');
     Route::patch('peminjaman-berkas/{id}', 'PeminjamanberkasController@update')->name('peminjaman-berkas.u');
+    Route::get('peminjaman-berkas/{id}/detail', 'PeminjamanberkasController@show')->name('peminjaman-berkas.v');
     Route::get('peminjaman-berkas/cari', 'PeminjamanberkasController@cari')->name('peminjaman-berkas.c');
     Route::get('peminjaman-berkas/cetak', 'PeminjamanberkasController@cetak')->name('peminjaman-berkas.ct');
     //cetak
@@ -108,6 +112,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('peminjaman-buku/{id}', 'PeminjamanbukuController@destroy')->name('peminjaman-buku.d');
     Route::get('peminjaman-buku/{id}/edit', 'PeminjamanbukuController@edit')->name('peminjaman-buku.e');
     Route::patch('peminjaman-buku/{id}', 'PeminjamanbukuController@update')->name('peminjaman-buku.u');
+    Route::get('peminjaman-buku/{id}/detail', 'PeminjamanbukuController@show')->name('peminjaman-buku.v');
     Route::get('peminjaman-buku/cari', 'PeminjamanbukuController@cari')->name('peminjaman-buku.c');
     Route::get('peminjaman-buku/cetak', 'PeminjamanbukuController@cetak')->name('peminjaman-buku.ct');
     //cetak
@@ -121,6 +126,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('pengembalian-berkas/{id}', 'PengembalianberkasController@destroy')->name('pengembalian-berkas.d');
     Route::get('pengembalian-berkas/{id}/edit', 'PengembalianberkasController@edit')->name('pengembalian-berkas.e');
     Route::patch('pengembalian-berkas/{id}', 'PengembalianberkasController@update')->name('pengembalian-berkas.u');
+    Route::get('pengembalian-berkas/{id}/detail', 'PengembalianberkasController@show')->name('pengembalian-berkas.v');
     Route::get('pengembalian-berkas/cari', 'PengembalianberkasController@cari')->name('pengembalian-berkas.c');
     Route::get('pengembalian-berkas/cetak', 'PengembalianberkasController@cetak')->name('pengembalian-berkas.ct');
     //cetak
@@ -133,33 +139,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('pengembalian-buku/{id}', 'PengembalianbukuController@destroy')->name('pengembalian-buku.d');
     Route::get('pengembalian-buku/{id}/edit', 'PengembalianbukuController@edit')->name('pengembalian-buku.e');
     Route::patch('pengembalian-buku/{id}', 'PengembalianbukuController@update')->name('pengembalian-buku.u');
+    Route::get('pengembalian-buku/{id}/detail', 'PengembalianbukuController@show')->name('pengembalian-buku.v');
     Route::get('pengembalian-buku/cari', 'PengembalianbukuController@cari')->name('pengembalian-buku.c');
     Route::get('pengembalian-buku/cetak', 'PengembalianbukuController@cetak')->name('pengembalian-buku.ct');
     //cetak
     Route::get('pengembalian-buku/print', 'CetakpengembalianbukuController@pdf')->name('pengembalian-buku.p');
-
-
-    // /////////////////////////////////////////////////////////////////////////////
-    // //Surat Masuk
-    // Route::get('surat-masuk', 'SuratmasukController@index')->name('surat-masuk');
-    // Route::get('surat-masuk/tambah', 'SuratmasukController@create')->name('surat-masuk.t');
-    // Route::post('surat-masuk', 'SuratmasukController@store')->name('surat-masuk.s');
-    // Route::delete('surat-masuk/{id}', 'SuratmasukController@destroy')->name('surat-masuk.d');
-    // Route::get('surat-masuk//edit/{id}', 'SuratmasukController@edit')->name('surat-masuk.e');
-    // Route::patch('surat-masuk/{id}', 'SuratmasukController@update')->name('surat-masuk.u');
-    // Route::get('surat-masuk/cari', 'SuratmasukController@cari')->name('surat-masuk.c');
-    // Route::get('surat-masuk/cetak', 'SuratmasukController@cetak')->name('surat-masuk.ct');
-
-
-    // //Surat Keluar
-    // Route::get('surat-keluar', 'SuratkeluarController@index')->name('surat-keluar');
-    // Route::get('surat-keluar/tambah', 'SuratkeluarController@create')->name('surat-keluar.t');
-    // Route::post('surat-keluar', 'SuratkeluarController@store')->name('surat-keluar.s');
-    // Route::delete('surat-keluar/{id}', 'SuratkeluarController@destroy')->name('surat-keluar.d');
-    // Route::get('surat-keluar//edit/{id}', 'SuratkeluarController@edit')->name('surat-keluar.e');
-    // Route::patch('surat-keluar/{id}', 'SuratkeluarController@update')->name('surat-keluar.u');
-    // Route::get('surat-keluar/cari', 'SuratkeluarController@cari')->name('surat-keluar.c');
-    // Route::get('surat-keluar/cetak', 'SuratkeluarController@cetak')->name('surat-keluar.ct');
 
     //Logout
     Route::get('logout', 'otentikasi\OtentikasiController@logout')->name('logout');

@@ -6,6 +6,7 @@
     <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
+                <div class="card-body">
                 <div class="card-header">
                     <h4>Pengembalian Buku</h4>
                 </div>
@@ -68,6 +69,7 @@
                                         @method('delete')
                                     </form>
                                         Delete</a>
+                                    <a href="{{ route('pengembalian-buku.v',$data->id)}}" class="badge badge-info">Detail</a>
                                 </td>
                             </tr>
                             @endforeach

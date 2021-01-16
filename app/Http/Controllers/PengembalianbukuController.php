@@ -103,6 +103,8 @@ class PengembalianbukuController extends Controller
      */
     public function show($id)
     {
+        $pengembalian_buku = DB::table('pengembalian_buku')->where('id', $id)->first();
+        return view('pengembalian_buku.pengembalian-buku-detail', ['pengembalian_buku' => $pengembalian_buku]);
     }
 
     /**
