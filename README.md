@@ -23,28 +23,28 @@ composer install
 ## Progress Checklist
 ##### Please give the check, if there are updated progress.
 
-- Dashboard :x:
-- Daftar Master Aplikasi :x:
+- Dashboard :heavy_check_mark:
+- Daftar Master Aplikasi :heavy_check_mark:
 	- Daftar Operator :heavy_check_mark:
 	- Daftar Kategori Pelayanan :heavy_check_mark:
 
-- Stock Opname :x:
+- Stock Opname :heavy_check_mark:
 	- Daftar Arsip :heavy_check_mark:
-	- Stock Opname Berkas :x:
-	- Stock Opname Buku :x:
+	- Stock Opname Berkas :heavy_check_mark:
+	- Stock Opname Buku :heavy_check_mark:
 
-- Peminjaman Arsip :x:
-	- Arsip Berkas :x:
-	- Arsip Buku :x:
+- Peminjaman Arsip :heavy_check_mark:
+	- Arsip Berkas :heavy_check_mark:
+	- Arsip Buku :heavy_check_mark:
 
-- Pengembalian Arsip :x:
-	- Arsip Berkas :x:
-	- Arsip Buku :x:
+- Pengembalian Arsip :heavy_check_mark:
+	- Arsip Berkas :heavy_check_mark:
+	- Arsip Buku :heavy_check_mark:
 
-- Laporan / Report :x:
-	- Daftar Arsip :x:
-	- Stock Opname Berkas :x:
-	- Stock Opname Buku :x:
-	- Pengembalian dan Peminjaman Berkas :x:
-	- Pengembalian dan Peminjaman Buku :x:
-- Logout :x:
+- Laporan / Report :heavy_check_mark:
+	- Daftar Arsip :heavy_check_mark:
+	- Stock Opname Berkas :heavy_check_mark:
+	- Stock Opname Buku :heavy_check_mark:
+	- Pengembalian dan Peminjaman Berkas :heavy_check_mark:
+	- Pengembalian dan Peminjaman Buku :heavy_check_mark:
+- Logout :heavy_check_mark:
